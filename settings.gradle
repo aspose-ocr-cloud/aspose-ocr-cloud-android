@@ -1,0 +1,4 @@
+include ':aspose-ocr-cloud-android'
+include ':app'
+include ':aspose-storage-cloud-android'
+rootProject.name = "aspose.ocr.cloud.sdk.android"
