@@ -10,9 +10,9 @@ In detail, it's a set of SDKs for optical character recognition and document sca
 
 It is easy to get started with Aspose.OCR Cloud, and there is nothing to install. Create an account at Aspose Cloud and get your application information, then you are ready to use [SDKs](#asposeocr-cloud-sdks)
 
-## Release 20.4:
+## Release 20.7:
 
-We are glad to introduce our new Android SDK.
+We released a feature of recognition regions selection.
 
 ## Features:
 
@@ -30,21 +30,22 @@ Our API is completely independent of your operating system, database system, or 
 ## Example
 
 ```java
-Configuration.setAPI_KEY("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-Configuration.setAPP_SID("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX");
+import com.aspose.ocr.api.*;
+
+private static void setUpConfig() throws Exception {
+        Configuration.setAPP_SID("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX");
+        Configuration.setAPI_KEY("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
 
 public String RecognizeFromUrl(String url) {
-    Call<ResponseBody> call = api.RecognizeFromUrl(url);
-    Response<ResponseBody> res = call.execute();
-    OCRResponse ocrResp = OCRResponse.Deserialize(res.body());
-    return ocrResp.text;
+    String urlToFile = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Book_of_Abraham_FirstPage.png";
+    OCRResponse ocrResponse = RecognizeFromUrl(urlToFile, Language.English);
+    return ocrResponse.text;
 }
 
 static String RecognizeFromContent(File f) {
-    RequestBody requestBody = RequestBody.create( MediaType.parse("application/octet-stream"), f);
-    Call<ResponseBody> call = api.RecognizeFromContent(requestBody);
-    Response<ResponseBody> res = call.execute();
-    OCRResponse ocrResp = OCRResponse.Deserialize(res.body());
+    File f = new File(Configuration.getTestSrcDir(), "de_1.jpg");
+    OCRResponse ocrResponse = RecognizeFromContent(f, Language.German);
     return ocrResp.text;
 }
 ```
@@ -92,7 +93,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.aspose</groupId>
     <artifactId>aspose-ocr-cloud-android</artifactId>
-    <version>20.4.0</version>
+    <version>20.7.0</version>
     <type>aar</type>
 </dependency>
 ```

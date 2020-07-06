@@ -19,8 +19,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.aspose.ocr.cloud.android.ApiClient;
 import com.aspose.ocr.cloud.android.Configuration;
+import com.aspose.ocr.cloud.android.api.Language;
+import com.aspose.ocr.cloud.android.api.OCRAPI;
 import com.aspose.ocr.cloud.android.api.OCRResponse;
-import com.aspose.ocr.cloud.android.api.OcrApi;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
 
-    private static OcrApi api;
+    private static OCRAPI api;
     String url = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Book_of_Abraham_FirstPage.png";
 
     @Override
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        api = new ApiClient().createService(OcrApi.class);
+        api = new ApiClient().createService(OCRAPI.class);
 
 
         mImageView = findViewById(R.id.image_view);
@@ -137,23 +138,16 @@ public class MainActivity extends AppCompatActivity {
             inputStream.read(targetArray);
 
             RequestBody requestBody = RequestBody.create(MediaType.parse("application/octet-stream"), targetArray);
-            Call<ResponseBody> call = api.RecognizeFromContent(requestBody);
 
-            try {
-                Response<ResponseBody> res = call.execute();
-                ResponseBody answer = res.body();
+            OCRResponse ocrResponse = api.RecognizeFromContent(requestBody, Language.English);
 
-                OCRResponse ocrResponse = OCRResponse.Deserialize(answer);
-                String text = ocrResponse.text;
 
-                mChooseBtn.setVisibility(View.INVISIBLE);
-                mTextView.setText(text);
-                mImageView.setVisibility(View.INVISIBLE);
-                mTextView.setVisibility(View.VISIBLE);
+            String text = ocrResponse.text;
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            mChooseBtn.setVisibility(View.INVISIBLE);
+            mTextView.setText(text);
+            mImageView.setVisibility(View.INVISIBLE);
+            mTextView.setVisibility(View.VISIBLE);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

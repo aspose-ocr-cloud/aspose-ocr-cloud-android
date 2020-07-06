@@ -1,6 +1,6 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="FirstTest.java">
+* <copyright company="Aspose" file="RecognizeFromUrlAndLangTest.java">
 *   Copyright (c) 2020 Aspose.OCR for Cloud
 * </copyright>
 * <summary>
@@ -28,7 +28,6 @@
 
 package com.aspose.ocr.cloud.android;
 
-import com.aspose.ocr.cloud.android.api.OcrApi;
 import com.aspose.ocr.cloud.android.api.Language;
 
 import org.junit.Before;

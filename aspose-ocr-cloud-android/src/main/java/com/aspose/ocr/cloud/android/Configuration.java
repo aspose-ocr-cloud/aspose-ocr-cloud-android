@@ -27,6 +27,7 @@
 package com.aspose.ocr.cloud.android;
 
 public class Configuration {
+
     static String basePath = "https://api.aspose.cloud/v3.0";
     static String authPath = "https://api.aspose.cloud/connect/token";
     static String apiKey;
@@ -70,7 +71,7 @@ public class Configuration {
     }
 
     public static String getTestSrcDir() {
-        return System.getProperty("user.dir") + "/../" + Configuration.srcTest;
+        return System.getProperty("user.dir") + "/" + Configuration.srcTest;
     }
 
     public static void setTestSrcDir(String testSrcDir) {
@@ -78,7 +79,7 @@ public class Configuration {
     }
 
     public static String getTestDstDir() {
-        return System.getProperty("user.dir") + "/../" + Configuration.dstTest;
+        return System.getProperty("user.dir") + "/" + Configuration.dstTest;
     }
 
     public static void setTestDstDir(String testDstDir) {

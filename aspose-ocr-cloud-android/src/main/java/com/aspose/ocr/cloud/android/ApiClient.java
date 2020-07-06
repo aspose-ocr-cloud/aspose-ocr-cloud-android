@@ -27,6 +27,7 @@
 
 package com.aspose.ocr.cloud.android;
 
+
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
@@ -119,7 +120,7 @@ public class ApiClient {
                 .addConverterFactory(GsonCustomConverterFactory.create(json.getGson()));
     }
 
-    static String getAccessToken( ){
+    static String getAccessToken(){
 
         OkHttpClient client = new OkHttpClient();
 

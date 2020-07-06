@@ -17,7 +17,7 @@ def isReleaseBuild() {
 }
 
 allprojects {
-    version = "20.4.0"
+    version = "20.7.0"
     group = "com.aspose"
 
     repositories {

@@ -46,7 +46,7 @@ task createPom {
         project {
             groupId 'com.aspose'
             artifactId 'aspose-cloud-ocr-android'
-            version '20.4.0'
+            version '20.7.0'
             packaging 'aar'
         }
     }.withXml {

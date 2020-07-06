@@ -1,124 +1,97 @@
-/*
-* --------------------------------------------------------------------------------------------------------------------
-* <copyright company="Aspose" file="ConversionApi.java">
-*   Copyright (c) 2020 Aspose.OCR for Cloud
-* </copyright>
-* <summary>
-*   Permission is hereby granted, free of charge, to any person obtaining a copy
-*  of this software and associated documentation files (the "Software"), to deal
-*  in the Software without restriction, including without limitation the rights
-*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-*  copies of the Software, and to permit persons to whom the Software is
-*  furnished to do so, subject to the following conditions:
-*
-*  The above copyright notice and this permission notice shall be included in all
-*  copies or substantial portions of the Software.
-*
-*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-*  SOFTWARE.
-* </summary>
-* --------------------------------------------------------------------------------------------------------------------
-*/
-
 package com.aspose.ocr.cloud.android.api;
 
+import com.aspose.ocr.cloud.android.ApiClient;
+import com.google.gson.Gson;
+import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.Headers;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
-import retrofit2.http.Part;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
+import retrofit2.Response;
 
-public interface OcrApi {
+import java.io.File;
+import java.io.IOException;
 
-    /**
-     * Recognize image text from some www URL
-     * @param url    Image URL in the World Wide Web (required)
-     * @return Call<ResponseBody>
-     */
-    @Headers({"Content-Type:application/json"})
-    @POST("ocr/recognize")
-    Call<ResponseBody> RecognizeFromUrl(
-            @Query("url") String url
-    );
+public class OCRAPI {
+    private static OcrApiInvoker api = new ApiClient().createService(OcrApiInvoker.class);
+    private static final Gson gson = new Gson();
 
-    /**
-     * Recognize image text from some www URL
-     * @param url       Image URL in the World Wide Web (required)
-     * @param language  Set recognition language. (optional)
-     * @return Call<ResponseBody>
-     */
-    @Headers({"Content-Type:application/json"})
-    @POST("ocr/recognize")
-    Call<ResponseBody> RecognizeFromUrl(
-            @Query("url") String url,
-            @Query("language") Language language
-    );
+    public static OCRResponse RecognizeFromUrl(String fileWebUrl, Language language) throws IOException {
+        Call<ResponseBody> call = api.RecognizeFromUrl(fileWebUrl, language);
+        Response<ResponseBody> res = call.execute();
+        ResponseBody answer = res.body();
 
-    /**
-     *  Recognize image text from the request body content. Send image on recognition directly.
-     * @param file  Request body with file in content as octet-stream (required)
-     * @return Call<ResponseBody>
-     */
-    @POST("ocr/recognize")
-    Call<ResponseBody> RecognizeFromContent(
-            @Body RequestBody file
-    );
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
 
-    /**
-     *  Recognize image text from the request body content. Send image on recognition directly.
-     * @param file      Request body with file in content as octet-stream (required)
-     * @param language  Set recognition language. (optional)
-     * @return Call<ResponseBody>
-     */
-    @POST("ocr/recognize")
-    Call<ResponseBody> RecognizeFromContent(
-            @Body RequestBody file,
-            @Query("language") Language language
-    );
+    public static OCRResponse RecognizeFromContent(File f, Language language) throws IOException {
+        RequestBody requestBody = RequestBody.create( MediaType.parse("application/octet-stream"), f);
+        Call<ResponseBody> call = api.RecognizeFromContent(requestBody);
+        Response<ResponseBody> res = call.execute();
+        ResponseBody answer = res.body();
 
-    /**
-     * Put image in Aspose Cloud Storage and Recognise
-     *
-     * @param name         Document name. (required)
-     * @param folder       The source document folder for storage. (optional)
-     * @param storage      The storage name in Aspose Cloud. (optional)
-     * @return Call<ResponseBody>
-     */
-    @GET("ocr/{name}/recognize")
-    Call<ResponseBody> RecognizeFromStorage(
-            @Path("name") String name,
-            @Query("storage") String storage,
-            @Query("folder") String folder
-    );
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
 
-    /**
-     * Put image in Aspose Cloud Storage and Recognise
-     *
-     * @param name         Document name. (required)
-     * @param folder       The source document folder for storage. (optional)
-     * @param storage      The storage name in Aspose Cloud. (optional)
-     * @param language     Set recognition language. (optional)
-     * @return Call<ResponseBody>
-     */
-    @GET("ocr/{name}/recognize")
-    Call<ResponseBody> RecognizeFromStorage(
-            @Path("name") String name,
-            @Query("folder") String folder,
-            @Query("storage") String storage,
-            @Query("language") Language language
-    );
+    public static OCRResponse RecognizeFromContent(RequestBody requestBody, Language language) throws IOException {
+        Call<ResponseBody> call = api.RecognizeFromContent(requestBody);
+        Response<ResponseBody> res = call.execute();
+        ResponseBody answer = res.body();
 
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
+
+    public static OCRResponse RecognizeFromStorage(String fileName,String folder, String storage, Language language) throws IOException {
+        Call<ResponseBody> call = api.RecognizeFromStorage(fileName, folder, storage, language);
+        Response<ResponseBody> res = call.execute();
+        ResponseBody answer = res.body();
+
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
+
+    public static OCRResponse RecognizeRegionsFromUrl(OCRRequestData ocrRequestData, String fileWebUrl) throws IOException {
+            String ocrRequestDataJson = gson.toJson(ocrRequestData);
+            RequestBody requestData = RequestBody.create(MediaType.parse("application/json"), ocrRequestDataJson);
+            RequestBody url = RequestBody.create(MediaType.parse("text/plain"), fileWebUrl);
+
+            Call<ResponseBody> call = api.RecognizeRegionsFromUrl(url, requestData);
+            Response<ResponseBody> res = call.execute();
+            ResponseBody answer = res.body();
+
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
+
+    public static OCRResponse RecognizeRegionsFromContent(OCRRequestData ocrRequestData, File f) throws IOException {
+        String ocrRequestDataJson = gson.toJson(ocrRequestData);
+        RequestBody requestData = RequestBody.create(MediaType.parse("application/json"), ocrRequestDataJson);
+        RequestBody requestFile = RequestBody.create(f, MediaType.parse("application/octet-stream"));
+
+        MultipartBody.Part bodyFile = MultipartBody.Part.createFormData("picture", f.getName(), requestFile);
+
+        api = new ApiClient().createService(OcrApiInvoker.class);
+        Call<ResponseBody> call = api.RecognizeRegionsFromContent(requestData, bodyFile);
+        Response<ResponseBody> res = call.execute();
+        ResponseBody answer = res.body();
+
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
+
+    public static OCRResponse RecognizeRegionsFromStorage(OCRRequestDataStorage ocrRequestData) throws IOException {
+        String ocrRequestDataJson = gson.toJson(ocrRequestData);
+        RequestBody requestData = RequestBody.create(MediaType.parse("application/json"), ocrRequestDataJson);
+
+        api = new ApiClient().createService(OcrApiInvoker.class);
+        Call<ResponseBody> call = api.RecognizeRegionsFromStorage(requestData);
+        Response<ResponseBody> res = call.execute();
+        ResponseBody answer = res.body();
+
+        assert answer != null;
+        return OCRResponse.Deserialize(answer);
+    }
 }
