@@ -25,27 +25,19 @@ BMP, JPG, GIF, PNG, TIFF
 
 Our API is completely independent of your operating system, database system, or development language. You can use any language and platform that supports HTTP to interact with our API. However, manually writing client code can be difficult, error-prone, and time-consuming. Therefore, we have provided and support [SDKs](#asposeocr-cloud-sdks) in many development languages to make it easier to integrate with us.
 
-## Example
+## OCR from URL in Android using Java
 
 ```java
-import com.aspose.ocr.api.*;
-
-private static void setUpConfig() throws Exception {
-        Configuration.setAPP_SID("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX");
-        Configuration.setAPI_KEY("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-    }
-
-public String RecognizeFromUrl(String url) {
-    String urlToFile = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Book_of_Abraham_FirstPage.png";
-    OCRResponse ocrResponse = RecognizeFromUrl(urlToFile, Language.English);
-    return ocrResponse.text;
-}
-
-static String RecognizeFromContent(File f) {
-    File f = new File(Configuration.getTestSrcDir(), "de_1.jpg");
-    OCRResponse ocrResponse = RecognizeFromContent(f, Language.German);
-    return ocrResp.text;
-}
+	// Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
+	Configuration.setAPP_SID("MY_CLIENT_ID");
+	Configuration.setAPI_KEY("MY_CLIENT_SECRET");
+	Configuration.setAuthPath("https://api.aspose.cloud/connect/token");
+	Configuration.setBasePath("https://api.aspose.cloud/v3.0");
+	Configuration.setUserAgent("WebKit");
+	
+	String urlToFile = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Book_of_Abraham_FirstPage.png";
+	OCRResponse ocrResponse = OCRAPI.RecognizeFromUrl(urlToFile, Language.English);
+	return ocrResponse.text;
 ```
 _________________________
 
@@ -81,7 +73,6 @@ Make a personal account on [Aspose Cloud Dashboard](https://dashboard.aspose.clo
 This project includes:   
 - Android demo application - "/app"
 - Module "ocr" - this is SDK located in "[/aspose-ocr-cloud-android](./aspose-ocr-cloud-android)". You can integrate it in your application.
-- Module "storage" - "[/aspose-storage-cloud-android](.aspose-storage-cloud-android)" is optional dependency, required if you plan to use [Aspose.Storage](https://github.com/aspose-storage-cloud/) features
 
 ### Maven users
 
