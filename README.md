@@ -1,7 +1,7 @@
 <img src="./resources/heading.png">
 
 # Android Cloud REST API for OCR
-![](https://img.shields.io/badge/api-v3.0-lightgrey)  [![GitHub license](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-android)](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android)
+![](https://img.shields.io/badge/api-v5.0-lightgrey)  [![GitHub license](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-android)](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android)
 
 
 Aspose OCR Cloud Android SDK is a simple OCR technology, which you can use in your application to convert image to text.
