@@ -108,14 +108,18 @@ dependencyResolutionManagement {
         }
     }
 }
+
 ```
 
 <p class="codeblock-label">build.gradle</p>
+
 ```groovy     
+
     implementation ('com.aspose:aspose-ocr-cloud-android:22.12.0') {
         exclude group:'org.apache.oltu.oauth2' , module: 'org.apache.oltu.oauth2.common'
         exclude group: 'javax.ws.rs'
     }
+
 ```
 #### 4. Import dependencies and add sample code where you need
 
