@@ -1,4 +1,17 @@
-include ':aspose-ocr-cloud-android'
-include ':app'
-include ':aspose-storage-cloud-android'
-rootProject.name = "aspose.ocr.cloud.sdk.android"
+rootProject.name = 'aspose-ocr-cloud-android'
+
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url 'https://releases-qa.aspose.cloud/java/repo'
+        }
+        maven {
+            url 'https://releases.aspose.cloud/java/repo'
+        }
+    }
+}
