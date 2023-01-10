@@ -161,7 +161,7 @@ dependencyResolutionManagement {
             System.out.println(result);
 ```
 
-#### 5. Follow [API documentation](.\target\apidocs) for detailed usage information
+#### 5. Follow [API documentation](.\target\apidocs\index.html) for detailed usage information
 
 
 <p align="center">
