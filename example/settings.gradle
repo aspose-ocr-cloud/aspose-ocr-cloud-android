@@ -10,10 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-//        mavenLocal()
         maven {
-            name 'AsposeCloudJavaQARepository'
-            url 'https://releases-qa.aspose.cloud/java/repo/'
+            name 'AsposeCloudJavaRepository'
+            url 'https://releases.aspose.cloud/java/repo/'
         }
     }
 }
