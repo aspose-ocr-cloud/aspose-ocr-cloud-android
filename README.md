@@ -97,6 +97,7 @@ Make a personal account on [Aspose Cloud Dashboard](https://dashboard.aspose.clo
 Add this dependency to your project's gradle scripts:
 
 <p class="codeblock-label">settings.gradle</p>
+
 ```groovy     
     
 dependencyResolutionManagement {
