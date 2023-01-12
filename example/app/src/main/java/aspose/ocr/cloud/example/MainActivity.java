@@ -18,10 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        String clientId = "PUT YOUR CLIENT ID HERE";
-//        String clientSecret = "PUT YOUR CLIENT SECRET HERE";
-        String clientId = "ba8486fd-3a51-4881-b048-f17fa8f702ba";
-        String clientSecret = "c3a1f7bc2de4e290d8f6bcefbef7aba6";
+       String clientId = "PUT YOUR CLIENT ID HERE";
+       String clientSecret = "PUT YOUR CLIENT SECRET HERE";
 
         TextView outputTextView= (TextView)findViewById(R.id.tw1);
         try {

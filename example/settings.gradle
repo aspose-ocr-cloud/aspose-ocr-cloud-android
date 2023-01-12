@@ -14,6 +14,8 @@ dependencyResolutionManagement {
             name 'AsposeCloudJavaRepository'
             url 'https://releases.aspose.cloud/java/repo/'
         }
+
+
     }
 }
 rootProject.name = "Example"
