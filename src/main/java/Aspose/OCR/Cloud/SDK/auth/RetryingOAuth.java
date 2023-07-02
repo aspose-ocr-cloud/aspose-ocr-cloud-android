@@ -166,7 +166,7 @@ public class RetryingOAuth extends OAuth implements Interceptor {
      *
      * @param requestAccessToken the request access token
      * @return True if the update is successful
-     * @throws IOException If fail to update the access token
+     * @throws java.io.IOException If fail to update the access token
      */
     public synchronized boolean updateAccessToken(String requestAccessToken) throws IOException {
         if (getAccessToken() == null || getAccessToken().equals(requestAccessToken)) {

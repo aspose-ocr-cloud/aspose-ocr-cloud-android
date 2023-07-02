@@ -5,19 +5,19 @@
     <artifactId>aspose-ocr-cloud-android</artifactId>
     <packaging>jar</packaging>
     <name>aspose-ocr-cloud-android</name>
-    <version>22.12.0</version>
-    <url>https://products.aspose.cloud/ocr/java</url>
-    <description>Aspose cloud Android (java) SDK</description>
+    <version>23.6.0</version>
+    <url>https://products.aspose.cloud/ocr/android</url>
+    <description>Aspose cloud Android SDK</description>
     <scm>
         <connection>scm:git:git@github.com:aspose-ocr-cloud/aspose-ocr-cloud-android.git</connection>
         <developerConnection>scm:git:git@github.com:aspose-ocr-cloud/aspose-ocr-cloud-android.git</developerConnection>
-        <url>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android/</url>
+        <url>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android</url>
     </scm>
 
     <licenses>
         <license>
             <name>MIT</name>
-            <url>https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android/blob/master/LICENSE</url>
+            <url>https://about.aspose.cloud/legal</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -234,10 +234,10 @@
         
         <extensions>
             <extension>
-                <groupId>com.github.seahen</groupId>
-                <artifactId>maven-s3-wagon</artifactId>
-                <version>1.3.3</version>
-            </extension>
+            <groupId>com.github.seahen</groupId>
+            <artifactId>maven-s3-wagon</artifactId>
+            <version>1.3.3</version>
+        </extension>
         </extensions>
     </build>
 
@@ -369,5 +369,12 @@
 		<name>Aspose Cloud Java Repository</name>
 		<url>https://releases.aspose.cloud/java/repo/</url>
 		</repository>
-    </repositories>    
+    </repositories>
+    
+    <distributionManagement>	
+        <repository>
+            <id>aspose-cloud-s3-repo-ci</id>
+            <url>s3://data.repository.aspose.cloud/java/repo/</url>
+        </repository>
+    </distributionManagement>
 </project>

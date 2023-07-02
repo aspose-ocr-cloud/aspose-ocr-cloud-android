@@ -1,17 +1,1 @@
-rootProject.name = 'aspose-ocr-cloud-android'
-
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        mavenLocal()
-        maven {
-            url 'https://releases-qa.aspose.cloud/java/repo'
-        }
-        maven {
-            url 'https://releases.aspose.cloud/java/repo'
-        }
-    }
-}
+rootProject.name = "aspose-ocr-cloud-android"
