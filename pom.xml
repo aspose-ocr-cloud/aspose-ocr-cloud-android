@@ -5,7 +5,7 @@
     <artifactId>aspose-ocr-cloud-android</artifactId>
     <packaging>jar</packaging>
     <name>aspose-ocr-cloud-android</name>
-    <version>23.6.0</version>
+    <version>23.11.0</version>
     <url>https://products.aspose.cloud/ocr/android</url>
     <description>Aspose cloud Android SDK</description>
     <scm>
@@ -371,7 +371,7 @@
 		</repository>
     </repositories>
     
-    <distributionManagement>	
+    <distributionManagement>	        
         <repository>
             <id>aspose-cloud-s3-repo-ci</id>
             <url>s3://data.repository.aspose.cloud/java/repo/</url>

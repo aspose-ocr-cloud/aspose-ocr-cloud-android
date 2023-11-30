@@ -27,9 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Aspose.OCR.Cloud.SDK.model.OCRRecognizeReceiptBody;
-import Aspose.OCR.Cloud.SDK.model.OCRResponse;
-import Aspose.OCR.Cloud.SDK.model.ProblemDetails;
+import Aspose.OCR.Cloud.SDK.model.TTSBody;
+import Aspose.OCR.Cloud.SDK.model.TTSResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -39,20 +38,20 @@ import java.util.Map;
 import javax.ws.rs.core.GenericType;
 import java.util.regex.Pattern;
 
-public class RecognizeReceiptApi {
+public class ConvertTextToSpeechTrialApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public RecognizeReceiptApi() {
+    public ConvertTextToSpeechTrialApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public RecognizeReceiptApi(ApiClient apiClient) {
+    public ConvertTextToSpeechTrialApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
-    public RecognizeReceiptApi(String clientId, String clientSecret) {
+    public ConvertTextToSpeechTrialApi(String clientId, String clientSecret) {
         this(new ApiClient(clientId, clientSecret, null));
     }
 
@@ -81,7 +80,7 @@ public class RecognizeReceiptApi {
     }
 
     /**
-     * Build call for cancelRecognizeReceipt
+     * Build call for cancelConvertTextToSpeechTrial
      * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -92,7 +91,7 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelRecognizeReceiptCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelConvertTextToSpeechTrialCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -109,7 +108,7 @@ public class RecognizeReceiptApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeReceipt");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/ConvertTextToSpeechTrial");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -135,23 +134,23 @@ public class RecognizeReceiptApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "JWT" };
+        String[] localVarAuthNames = new String[] {};
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelRecognizeReceiptValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelConvertTextToSpeechTrialValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling cancelRecognizeReceipt(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling cancelConvertTextToSpeechTrial(Async)");
         }
 
-        return cancelRecognizeReceiptCall(id, _callback);
+        return cancelConvertTextToSpeechTrialCall(id, _callback);
 
     }
 
     /**
-     * CancelRecognizeReceipt
+     * CancelConvertTextToSpeechTrial
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -161,12 +160,12 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public void cancelRecognizeReceipt(String id) throws ApiException {
-        cancelRecognizeReceiptWithHttpInfo(id);
+    public void cancelConvertTextToSpeechTrial(String id) throws ApiException {
+        cancelConvertTextToSpeechTrialWithHttpInfo(id);
     }
 
     /**
-     * CancelRecognizeReceipt
+     * CancelConvertTextToSpeechTrial
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -177,13 +176,13 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> cancelRecognizeReceiptWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = cancelRecognizeReceiptValidateBeforeCall(id, null);
+    public ApiResponse<Void> cancelConvertTextToSpeechTrialWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = cancelConvertTextToSpeechTrialValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * CancelRecognizeReceipt (asynchronously)
+     * CancelConvertTextToSpeechTrial (asynchronously)
      * 
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -195,14 +194,14 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelRecognizeReceiptAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call cancelConvertTextToSpeechTrialAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelRecognizeReceiptValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = cancelConvertTextToSpeechTrialValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getRecognizeReceipt
+     * Build call for getConvertTextToSpeechTrial
      * @param id Task id to select the result (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -213,7 +212,7 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecognizeReceiptCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConvertTextToSpeechTrialCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -230,7 +229,7 @@ public class RecognizeReceiptApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeReceipt");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/ConvertTextToSpeechTrial");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -257,26 +256,26 @@ public class RecognizeReceiptApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "JWT" };
+        String[] localVarAuthNames = new String[] {};
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecognizeReceiptValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConvertTextToSpeechTrialValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getRecognizeReceipt(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling getConvertTextToSpeechTrial(Async)");
         }
 
-        return getRecognizeReceiptCall(id, _callback);
+        return getConvertTextToSpeechTrialCall(id, _callback);
 
     }
 
     /**
-     * GetRecognizeReceipt
+     * GetConvertTextToSpeechTrial
      * 
      * @param id Task id to select the result (required)
-     * @return OCRResponse
+     * @return TTSResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -284,16 +283,16 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public OCRResponse getRecognizeReceipt(String id) throws ApiException {
-        ApiResponse<OCRResponse> localVarResp = getRecognizeReceiptWithHttpInfo(id);
+    public TTSResponse getConvertTextToSpeechTrial(String id) throws ApiException {
+        ApiResponse<TTSResponse> localVarResp = getConvertTextToSpeechTrialWithHttpInfo(id);
         return localVarResp.getData();
     }
 
     /**
-     * GetRecognizeReceipt
+     * GetConvertTextToSpeechTrial
      * 
      * @param id Task id to select the result (required)
-     * @return ApiResponse&lt;OCRResponse&gt;
+     * @return ApiResponse&lt;TTSResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -301,14 +300,14 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OCRResponse> getRecognizeReceiptWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = getRecognizeReceiptValidateBeforeCall(id, null);
-        Type localVarReturnType = new TypeToken<OCRResponse>(){}.getType();
+    public ApiResponse<TTSResponse> getConvertTextToSpeechTrialWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getConvertTextToSpeechTrialValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<TTSResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * GetRecognizeReceipt (asynchronously)
+     * GetConvertTextToSpeechTrial (asynchronously)
      * 
      * @param id Task id to select the result (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -320,27 +319,26 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecognizeReceiptAsync(String id, final ApiCallback<OCRResponse> _callback) throws ApiException {
+    public okhttp3.Call getConvertTextToSpeechTrialAsync(String id, final ApiCallback<TTSResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRecognizeReceiptValidateBeforeCall(id, _callback);
-        Type localVarReturnType = new TypeToken<OCRResponse>(){}.getType();
+        okhttp3.Call localVarCall = getConvertTextToSpeechTrialValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<TTSResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for postRecognizeReceipt
-     * @param ocRRecognizeReceiptBody  (required)
+     * Build call for postConvertTextToSpeechTrial
+     * @param ttSBody  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRecognizeReceiptCall(OCRRecognizeReceiptBody ocRRecognizeReceiptBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postConvertTextToSpeechTrialCall(TTSBody ttSBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -354,10 +352,10 @@ public class RecognizeReceiptApi {
             basePath = null;
         }
 
-        Object localVarPostBody = ocRRecognizeReceiptBody;
+        Object localVarPostBody = ttSBody;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeReceipt");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/ConvertTextToSpeechTrial");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -381,75 +379,72 @@ public class RecognizeReceiptApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "JWT" };
+        String[] localVarAuthNames = new String[] {};
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRecognizeReceiptValidateBeforeCall(OCRRecognizeReceiptBody ocRRecognizeReceiptBody, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'ocRRecognizeReceiptBody' is set
-        if (ocRRecognizeReceiptBody == null) {
-            throw new ApiException("Missing the required parameter 'ocRRecognizeReceiptBody' when calling postRecognizeReceipt(Async)");
+    private okhttp3.Call postConvertTextToSpeechTrialValidateBeforeCall(TTSBody ttSBody, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ttSBody' is set
+        if (ttSBody == null) {
+            throw new ApiException("Missing the required parameter 'ttSBody' when calling postConvertTextToSpeechTrial(Async)");
         }
 
-        return postRecognizeReceiptCall(ocRRecognizeReceiptBody, _callback);
+        return postConvertTextToSpeechTrialCall(ttSBody, _callback);
 
     }
 
     /**
-     * PostRecognizeReceipt
+     * PostConvertTextToSpeechTrial
      * 
-     * @param ocRRecognizeReceiptBody  (required)
+     * @param ttSBody  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public String postRecognizeReceipt(OCRRecognizeReceiptBody ocRRecognizeReceiptBody) throws ApiException {
-        ApiResponse<String> localVarResp = postRecognizeReceiptWithHttpInfo(ocRRecognizeReceiptBody);
+    public String postConvertTextToSpeechTrial(TTSBody ttSBody) throws ApiException {
+        ApiResponse<String> localVarResp = postConvertTextToSpeechTrialWithHttpInfo(ttSBody);
         return localVarResp.getData();
     }
 
     /**
-     * PostRecognizeReceipt
+     * PostConvertTextToSpeechTrial
      * 
-     * @param ocRRecognizeReceiptBody  (required)
+     * @param ttSBody  (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> postRecognizeReceiptWithHttpInfo(OCRRecognizeReceiptBody ocRRecognizeReceiptBody) throws ApiException {
-        okhttp3.Call localVarCall = postRecognizeReceiptValidateBeforeCall(ocRRecognizeReceiptBody, null);
+    public ApiResponse<String> postConvertTextToSpeechTrialWithHttpInfo(TTSBody ttSBody) throws ApiException {
+        okhttp3.Call localVarCall = postConvertTextToSpeechTrialValidateBeforeCall(ttSBody, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * PostRecognizeReceipt (asynchronously)
+     * PostConvertTextToSpeechTrial (asynchronously)
      * 
-     * @param ocRRecognizeReceiptBody  (required)
+     * @param ttSBody  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRecognizeReceiptAsync(OCRRecognizeReceiptBody ocRRecognizeReceiptBody, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call postConvertTextToSpeechTrialAsync(TTSBody ttSBody, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postRecognizeReceiptValidateBeforeCall(ocRRecognizeReceiptBody, _callback);
+        okhttp3.Call localVarCall = postConvertTextToSpeechTrialValidateBeforeCall(ttSBody, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -473,3 +468,6 @@ public class RecognizeReceiptApi {
   }
 
 }
+
+
+

@@ -56,14 +56,30 @@ import Aspose.OCR.Cloud.SDK.JSON;
  * OCR Process setting for Image recognition
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-30T20:17:04.655+03:00[GMT+03:00]")
-public class OCRSettingsRecognizeRegions {
+public class OCRSettingsRecognizeAndParseInvoice {
+  public static final String SERIALIZED_NAME_MAKE_SKEW_CORRECT = "makeSkewCorrect";
+  @SerializedName(SERIALIZED_NAME_MAKE_SKEW_CORRECT)
+  private Boolean makeSkewCorrect = false;
+
+  public static final String SERIALIZED_NAME_MAKE_BINARIZATION = "makeBinarization";
+  @SerializedName(SERIALIZED_NAME_MAKE_BINARIZATION)
+  private Boolean makeBinarization = false;
+
+  public static final String SERIALIZED_NAME_MAKE_UPSAMPLING = "makeUpsampling";
+  @SerializedName(SERIALIZED_NAME_MAKE_UPSAMPLING)
+  private Boolean makeUpsampling = false;
+
+  public static final String SERIALIZED_NAME_RESULT_TYPE = "resultType";
+  @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
+  private ResultType resultType;
+
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
   private Language language;
 
-  public static final String SERIALIZED_NAME_MAKE_SKEW_CORRECT = "makeSkewCorrect";
-  @SerializedName(SERIALIZED_NAME_MAKE_SKEW_CORRECT)
-  private Boolean makeSkewCorrect = true;
+  public static final String SERIALIZED_NAME_ROTATE = "Rotate";
+  @SerializedName(SERIALIZED_NAME_ROTATE)
+  private Integer rotate;
 
   public static final String SERIALIZED_NAME_MAKE_SPELL_CHECK = "makeSpellCheck";
   @SerializedName(SERIALIZED_NAME_MAKE_SPELL_CHECK)
@@ -72,26 +88,6 @@ public class OCRSettingsRecognizeRegions {
   public static final String SERIALIZED_NAME_MAKE_CONTRAST_CORRECTION = "makeContrastCorrection";
   @SerializedName(SERIALIZED_NAME_MAKE_CONTRAST_CORRECTION)
   private Boolean makeContrastCorrection = false;
-
-  public static final String SERIALIZED_NAME_MAKE_UPSAMPLING = "makeUpsampling";
-  @SerializedName(SERIALIZED_NAME_MAKE_UPSAMPLING)
-  private Boolean makeUpsampling = false;
-
-  public static final String SERIALIZED_NAME_REGIONS = "regions";
-  @SerializedName(SERIALIZED_NAME_REGIONS)
-  private List<OCRRegion> regions = null;
-
-  public static final String SERIALIZED_NAME_RESULT_TYPE = "resultType";
-  @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
-  private ResultType resultType;
-
-  public static final String SERIALIZED_NAME_ROTATE = "Rotate";
-  @SerializedName(SERIALIZED_NAME_ROTATE)
-  private Integer rotate;
-
-  public static final String SERIALIZED_NAME_MAKE_BINARIZATION = "makeBinarization";
-  @SerializedName(SERIALIZED_NAME_MAKE_BINARIZATION)
-  private Boolean makeBinarization = true;
 
   public static final String SERIALIZED_NAME_DSR_MODE = "dsrMode";
   @SerializedName(SERIALIZED_NAME_DSR_MODE)
@@ -105,32 +101,14 @@ public class OCRSettingsRecognizeRegions {
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE_TABLE)
   private ResultTypeTable resultTypeTable;
 
-  public OCRSettingsRecognizeRegions() {
+  public static final String SERIALIZED_NAME_REGIONS = "regions";
+  @SerializedName(SERIALIZED_NAME_REGIONS)
+  private List<OCRRegion> regions = null;
+
+  public OCRSettingsRecognizeAndParseInvoice() {
   }
 
-  public OCRSettingsRecognizeRegions language(Language language) {
-    
-    this.language = language;
-    return this;
-  }
-
-   /**
-   * Get language
-   * @return language
-  **/
-  @javax.annotation.Nullable
-
-  public Language getLanguage() {
-    return language;
-  }
-
-
-  public void setLanguage(Language language) {
-    this.language = language;
-  }
-
-
-  public OCRSettingsRecognizeRegions makeSkewCorrect(Boolean makeSkewCorrect) {
+  public OCRSettingsRecognizeAndParseInvoice makeSkewCorrect(Boolean makeSkewCorrect) {
     
     this.makeSkewCorrect = makeSkewCorrect;
     return this;
@@ -152,7 +130,117 @@ public class OCRSettingsRecognizeRegions {
   }
 
 
-  public OCRSettingsRecognizeRegions makeSpellCheck(Boolean makeSpellCheck) {
+  public OCRSettingsRecognizeAndParseInvoice makeBinarization(Boolean makeBinarization) {
+    
+    this.makeBinarization = makeBinarization;
+    return this;
+  }
+
+   /**
+   * Option to enable binarization algorithm. False by default
+   * @return makeBinarization
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getMakeBinarization() {
+    return makeBinarization;
+  }
+
+
+  public void setMakeBinarization(Boolean makeBinarization) {
+    this.makeBinarization = makeBinarization;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice makeUpsampling(Boolean makeUpsampling) {
+    
+    this.makeUpsampling = makeUpsampling;
+    return this;
+  }
+
+   /**
+   * Option to enable image up-sampling algorithm to improve quality. True by default
+   * @return makeUpsampling
+  **/
+  @javax.annotation.Nullable
+
+  public Boolean getMakeUpsampling() {
+    return makeUpsampling;
+  }
+
+
+  public void setMakeUpsampling(Boolean makeUpsampling) {
+    this.makeUpsampling = makeUpsampling;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice resultType(ResultType resultType) {
+    
+    this.resultType = resultType;
+    return this;
+  }
+
+   /**
+   * Get resultType
+   * @return resultType
+  **/
+  @javax.annotation.Nullable
+
+  public ResultType getResultType() {
+    return resultType;
+  }
+
+
+  public void setResultType(ResultType resultType) {
+    this.resultType = resultType;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice language(Language language) {
+    
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * Get language
+   * @return language
+  **/
+  @javax.annotation.Nullable
+
+  public Language getLanguage() {
+    return language;
+  }
+
+
+  public void setLanguage(Language language) {
+    this.language = language;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice rotate(Integer rotate) {
+    
+    this.rotate = rotate;
+    return this;
+  }
+
+   /**
+   * Rotate image&gt;
+   * @return rotate
+  **/
+  @javax.annotation.Nullable
+
+  public Integer getRotate() {
+    return rotate;
+  }
+
+
+  public void setRotate(Integer rotate) {
+    this.rotate = rotate;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice makeSpellCheck(Boolean makeSpellCheck) {
     
     this.makeSpellCheck = makeSpellCheck;
     return this;
@@ -174,7 +262,7 @@ public class OCRSettingsRecognizeRegions {
   }
 
 
-  public OCRSettingsRecognizeRegions makeContrastCorrection(Boolean makeContrastCorrection) {
+  public OCRSettingsRecognizeAndParseInvoice makeContrastCorrection(Boolean makeContrastCorrection) {
     
     this.makeContrastCorrection = makeContrastCorrection;
     return this;
@@ -198,35 +286,79 @@ public class OCRSettingsRecognizeRegions {
   }
 
 
-  public OCRSettingsRecognizeRegions makeUpsampling(Boolean makeUpsampling) {
+  public OCRSettingsRecognizeAndParseInvoice dsrMode(DsrMode dsrMode) {
     
-    this.makeUpsampling = makeUpsampling;
+    this.dsrMode = dsrMode;
     return this;
   }
 
    /**
-   * Option to enable image up-sampling algorithm to improve quality. True by default
-   * @return makeUpsampling
+   * Get dsrMode
+   * @return dsrMode
   **/
   @javax.annotation.Nullable
 
-  public Boolean getMakeUpsampling() {
-    return makeUpsampling;
+  public DsrMode getDsrMode() {
+    return dsrMode;
   }
 
 
-  public void setMakeUpsampling(Boolean makeUpsampling) {
-    this.makeUpsampling = makeUpsampling;
+  public void setDsrMode(DsrMode dsrMode) {
+    this.dsrMode = dsrMode;
   }
 
 
-  public OCRSettingsRecognizeRegions regions(List<OCRRegion> regions) {
+  public OCRSettingsRecognizeAndParseInvoice dsrConfidence(DsrConfidence dsrConfidence) {
+    
+    this.dsrConfidence = dsrConfidence;
+    return this;
+  }
+
+   /**
+   * Get dsrConfidence
+   * @return dsrConfidence
+  **/
+  @javax.annotation.Nullable
+
+  public DsrConfidence getDsrConfidence() {
+    return dsrConfidence;
+  }
+
+
+  public void setDsrConfidence(DsrConfidence dsrConfidence) {
+    this.dsrConfidence = dsrConfidence;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice resultTypeTable(ResultTypeTable resultTypeTable) {
+    
+    this.resultTypeTable = resultTypeTable;
+    return this;
+  }
+
+   /**
+   * Get resultTypeTable
+   * @return resultTypeTable
+  **/
+  @javax.annotation.Nullable
+
+  public ResultTypeTable getResultTypeTable() {
+    return resultTypeTable;
+  }
+
+
+  public void setResultTypeTable(ResultTypeTable resultTypeTable) {
+    this.resultTypeTable = resultTypeTable;
+  }
+
+
+  public OCRSettingsRecognizeAndParseInvoice regions(List<OCRRegion> regions) {
     
     this.regions = regions;
     return this;
   }
 
-  public OCRSettingsRecognizeRegions addRegionsItem(OCRRegion regionsItem) {
+  public OCRSettingsRecognizeAndParseInvoice addRegionsItem(OCRRegion regionsItem) {
     if (this.regions == null) {
       this.regions = new ArrayList<OCRRegion>();
     }
@@ -250,138 +382,6 @@ public class OCRSettingsRecognizeRegions {
   }
 
 
-  public OCRSettingsRecognizeRegions resultType(ResultType resultType) {
-    
-    this.resultType = resultType;
-    return this;
-  }
-
-   /**
-   * Get resultType
-   * @return resultType
-  **/
-  @javax.annotation.Nullable
-
-  public ResultType getResultType() {
-    return resultType;
-  }
-
-
-  public void setResultType(ResultType resultType) {
-    this.resultType = resultType;
-  }
-
-
-  public OCRSettingsRecognizeRegions rotate(Integer rotate) {
-    
-    this.rotate = rotate;
-    return this;
-  }
-
-   /**
-   * Rotate image&gt;
-   * @return rotate
-  **/
-  @javax.annotation.Nullable
-
-  public Integer getRotate() {
-    return rotate;
-  }
-
-
-  public void setRotate(Integer rotate) {
-    this.rotate = rotate;
-  }
-
-
-  public OCRSettingsRecognizeRegions makeBinarization(Boolean makeBinarization) {
-    
-    this.makeBinarization = makeBinarization;
-    return this;
-  }
-
-   /**
-   * Option to enable image binarization algorithm. False by default
-   * @return makeBinarization
-  **/
-  @javax.annotation.Nullable
-
-  public Boolean getMakeBinarization() {
-    return makeBinarization;
-  }
-
-
-  public void setMakeBinarization(Boolean makeBinarization) {
-    this.makeBinarization = makeBinarization;
-  }
-
-
-  public OCRSettingsRecognizeRegions dsrMode(DsrMode dsrMode) {
-    
-    this.dsrMode = dsrMode;
-    return this;
-  }
-
-   /**
-   * Get dsrMode
-   * @return dsrMode
-  **/
-  @javax.annotation.Nullable
-
-  public DsrMode getDsrMode() {
-    return dsrMode;
-  }
-
-
-  public void setDsrMode(DsrMode dsrMode) {
-    this.dsrMode = dsrMode;
-  }
-
-
-  public OCRSettingsRecognizeRegions dsrConfidence(DsrConfidence dsrConfidence) {
-    
-    this.dsrConfidence = dsrConfidence;
-    return this;
-  }
-
-   /**
-   * Get dsrConfidence
-   * @return dsrConfidence
-  **/
-  @javax.annotation.Nullable
-
-  public DsrConfidence getDsrConfidence() {
-    return dsrConfidence;
-  }
-
-
-  public void setDsrConfidence(DsrConfidence dsrConfidence) {
-    this.dsrConfidence = dsrConfidence;
-  }
-
-
-  public OCRSettingsRecognizeRegions resultTypeTable(ResultTypeTable resultTypeTable) {
-    
-    this.resultTypeTable = resultTypeTable;
-    return this;
-  }
-
-   /**
-   * Get resultTypeTable
-   * @return resultTypeTable
-  **/
-  @javax.annotation.Nullable
-
-  public ResultTypeTable getResultTypeTable() {
-    return resultTypeTable;
-  }
-
-
-  public void setResultTypeTable(ResultTypeTable resultTypeTable) {
-    this.resultTypeTable = resultTypeTable;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -391,19 +391,19 @@ public class OCRSettingsRecognizeRegions {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OCRSettingsRecognizeRegions ocRSettingsRecognizeRegions = (OCRSettingsRecognizeRegions) o;
-    return Objects.equals(this.language, ocRSettingsRecognizeRegions.language) &&
-        Objects.equals(this.makeSkewCorrect, ocRSettingsRecognizeRegions.makeSkewCorrect) &&
-        Objects.equals(this.makeSpellCheck, ocRSettingsRecognizeRegions.makeSpellCheck) &&
-        Objects.equals(this.makeContrastCorrection, ocRSettingsRecognizeRegions.makeContrastCorrection) &&
-        Objects.equals(this.makeUpsampling, ocRSettingsRecognizeRegions.makeUpsampling) &&
-        Objects.equals(this.regions, ocRSettingsRecognizeRegions.regions) &&
-        Objects.equals(this.resultType, ocRSettingsRecognizeRegions.resultType) &&
-        Objects.equals(this.rotate, ocRSettingsRecognizeRegions.rotate) &&
-        Objects.equals(this.makeBinarization, ocRSettingsRecognizeRegions.makeBinarization) &&
-        Objects.equals(this.dsrMode, ocRSettingsRecognizeRegions.dsrMode) &&
-        Objects.equals(this.dsrConfidence, ocRSettingsRecognizeRegions.dsrConfidence) &&
-        Objects.equals(this.resultTypeTable, ocRSettingsRecognizeRegions.resultTypeTable);
+    OCRSettingsRecognizeAndParseInvoice ocRSettingsRecognizeAndParseInvoice = (OCRSettingsRecognizeAndParseInvoice) o;
+    return Objects.equals(this.makeSkewCorrect, ocRSettingsRecognizeAndParseInvoice.makeSkewCorrect) &&
+        Objects.equals(this.makeBinarization, ocRSettingsRecognizeAndParseInvoice.makeBinarization) &&
+        Objects.equals(this.makeUpsampling, ocRSettingsRecognizeAndParseInvoice.makeUpsampling) &&
+        Objects.equals(this.resultType, ocRSettingsRecognizeAndParseInvoice.resultType) &&
+        Objects.equals(this.language, ocRSettingsRecognizeAndParseInvoice.language) &&
+        Objects.equals(this.rotate, ocRSettingsRecognizeAndParseInvoice.rotate) &&
+        Objects.equals(this.makeSpellCheck, ocRSettingsRecognizeAndParseInvoice.makeSpellCheck) &&
+        Objects.equals(this.makeContrastCorrection, ocRSettingsRecognizeAndParseInvoice.makeContrastCorrection) &&
+        Objects.equals(this.dsrMode, ocRSettingsRecognizeAndParseInvoice.dsrMode) &&
+        Objects.equals(this.dsrConfidence, ocRSettingsRecognizeAndParseInvoice.dsrConfidence) &&
+        Objects.equals(this.resultTypeTable, ocRSettingsRecognizeAndParseInvoice.resultTypeTable) &&
+        Objects.equals(this.regions, ocRSettingsRecognizeAndParseInvoice.regions);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -412,7 +412,7 @@ public class OCRSettingsRecognizeRegions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(language, makeSkewCorrect, makeSpellCheck, makeContrastCorrection, makeUpsampling, regions, resultType, rotate, makeBinarization, dsrMode, dsrConfidence, resultTypeTable);
+    return Objects.hash(makeSkewCorrect, makeBinarization, makeUpsampling, resultType, language, rotate, makeSpellCheck, makeContrastCorrection, dsrMode, dsrConfidence, resultTypeTable, regions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -425,19 +425,19 @@ public class OCRSettingsRecognizeRegions {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OCRSettingsRecognizeRegions {\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("class OCRSettingsRecognizeAndParseInvoice {\n");
     sb.append("    makeSkewCorrect: ").append(toIndentedString(makeSkewCorrect)).append("\n");
+    sb.append("    makeBinarization: ").append(toIndentedString(makeBinarization)).append("\n");
+    sb.append("    makeUpsampling: ").append(toIndentedString(makeUpsampling)).append("\n");
+    sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
     sb.append("    makeSpellCheck: ").append(toIndentedString(makeSpellCheck)).append("\n");
     sb.append("    makeContrastCorrection: ").append(toIndentedString(makeContrastCorrection)).append("\n");
-    sb.append("    makeUpsampling: ").append(toIndentedString(makeUpsampling)).append("\n");
-    sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
-    sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
-    sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
-    sb.append("    makeBinarization: ").append(toIndentedString(makeBinarization)).append("\n");
     sb.append("    dsrMode: ").append(toIndentedString(dsrMode)).append("\n");
     sb.append("    dsrConfidence: ").append(toIndentedString(dsrConfidence)).append("\n");
     sb.append("    resultTypeTable: ").append(toIndentedString(resultTypeTable)).append("\n");
+    sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -460,18 +460,18 @@ public class OCRSettingsRecognizeRegions {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("language");
     openapiFields.add("makeSkewCorrect");
+    openapiFields.add("makeBinarization");
+    openapiFields.add("makeUpsampling");
+    openapiFields.add("resultType");
+    openapiFields.add("language");
+    openapiFields.add("Rotate");
     openapiFields.add("makeSpellCheck");
     openapiFields.add("makeContrastCorrection");
-    openapiFields.add("makeUpsampling");
-    openapiFields.add("regions");
-    openapiFields.add("resultType");
-    openapiFields.add("Rotate");
-    openapiFields.add("makeBinarization");
     openapiFields.add("dsrMode");
     openapiFields.add("dsrConfidence");
     openapiFields.add("resultTypeTable");
+    openapiFields.add("regions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -481,20 +481,20 @@ public class OCRSettingsRecognizeRegions {
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OCRSettingsRecognizeRegions
+  * @throws IOException if the JSON Object is invalid with respect to OCRSettingsRecognizeAndParseInvoice
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!OCRSettingsRecognizeRegions.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OCRSettingsRecognizeRegions is not found in the empty JSON string", OCRSettingsRecognizeRegions.openapiRequiredFields.toString()));
+        if (!OCRSettingsRecognizeAndParseInvoice.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in OCRSettingsRecognizeAndParseInvoice is not found in the empty JSON string", OCRSettingsRecognizeAndParseInvoice.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!OCRSettingsRecognizeRegions.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OCRSettingsRecognizeRegions` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!OCRSettingsRecognizeAndParseInvoice.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OCRSettingsRecognizeAndParseInvoice` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
       if (jsonObj.get("regions") != null && !jsonObj.get("regions").isJsonNull()) {
@@ -517,22 +517,22 @@ public class OCRSettingsRecognizeRegions {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OCRSettingsRecognizeRegions.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OCRSettingsRecognizeRegions' and its subtypes
+       if (!OCRSettingsRecognizeAndParseInvoice.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'OCRSettingsRecognizeAndParseInvoice' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OCRSettingsRecognizeRegions> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OCRSettingsRecognizeRegions.class));
+       final TypeAdapter<OCRSettingsRecognizeAndParseInvoice> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(OCRSettingsRecognizeAndParseInvoice.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<OCRSettingsRecognizeRegions>() {
+       return (TypeAdapter<T>) new TypeAdapter<OCRSettingsRecognizeAndParseInvoice>() {
            @Override
-           public void write(JsonWriter out, OCRSettingsRecognizeRegions value) throws IOException {
+           public void write(JsonWriter out, OCRSettingsRecognizeAndParseInvoice value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public OCRSettingsRecognizeRegions read(JsonReader in) throws IOException {
+           public OCRSettingsRecognizeAndParseInvoice read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -543,18 +543,18 @@ public class OCRSettingsRecognizeRegions {
   }
 
  /**
-  * Create an instance of OCRSettingsRecognizeRegions given an JSON string
+  * Create an instance of OCRSettingsRecognizeAndParseInvoice given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of OCRSettingsRecognizeRegions
-  * @throws IOException if the JSON string is invalid with respect to OCRSettingsRecognizeRegions
+  * @return An instance of OCRSettingsRecognizeAndParseInvoice
+  * @throws IOException if the JSON string is invalid with respect to OCRSettingsRecognizeAndParseInvoice
   */
-  public static OCRSettingsRecognizeRegions fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OCRSettingsRecognizeRegions.class);
+  public static OCRSettingsRecognizeAndParseInvoice fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, OCRSettingsRecognizeAndParseInvoice.class);
   }
 
  /**
-  * Convert an instance of OCRSettingsRecognizeRegions to an JSON string
+  * Convert an instance of OCRSettingsRecognizeAndParseInvoice to an JSON string
   *
   * @return JSON string
   */

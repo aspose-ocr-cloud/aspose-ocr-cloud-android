@@ -13,7 +13,7 @@
 
 package Aspose.OCR.Cloud.SDK;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-03T00:33:58.451+03:00[GMT+03:00]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-30T20:17:04.655+03:00[GMT+03:00]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

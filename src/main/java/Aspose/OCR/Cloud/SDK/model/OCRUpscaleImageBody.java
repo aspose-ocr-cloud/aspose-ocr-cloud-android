@@ -44,9 +44,9 @@ import java.util.Set;
 import Aspose.OCR.Cloud.SDK.JSON;
 
 /**
- * OCRUpscaleImageBody
+ * Combines Image data and OCR processing settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-03T00:33:58.451+03:00[GMT+03:00]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-30T20:17:04.655+03:00[GMT+03:00]")
 public class OCRUpscaleImageBody {
   public static final String SERIALIZED_NAME_IMAGE = "image";
   @SerializedName(SERIALIZED_NAME_IMAGE)
@@ -62,7 +62,7 @@ public class OCRUpscaleImageBody {
   }
 
    /**
-   * Get image
+   * Gets or Sets Image
    * @return image
   **/
   @javax.annotation.Nonnull

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Aspose.OCR.Cloud.SDK.model.OCRRecognizeReceiptBody;
+import Aspose.OCR.Cloud.SDK.model.OCRRecognizeAndParseInvoiceBody;
 import Aspose.OCR.Cloud.SDK.model.OCRResponse;
 import Aspose.OCR.Cloud.SDK.model.ProblemDetails;
 
@@ -39,20 +39,20 @@ import java.util.Map;
 import javax.ws.rs.core.GenericType;
 import java.util.regex.Pattern;
 
-public class RecognizeReceiptApi {
+public class RecognizeAndParseInvoiceApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public RecognizeReceiptApi() {
+    public RecognizeAndParseInvoiceApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public RecognizeReceiptApi(ApiClient apiClient) {
+    public RecognizeAndParseInvoiceApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
-    public RecognizeReceiptApi(String clientId, String clientSecret) {
+    public RecognizeAndParseInvoiceApi(String clientId, String clientSecret) {
         this(new ApiClient(clientId, clientSecret, null));
     }
 
@@ -81,7 +81,7 @@ public class RecognizeReceiptApi {
     }
 
     /**
-     * Build call for cancelRecognizeReceipt
+     * Build call for cancelRecognizeAndParseInvoice
      * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -92,7 +92,7 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelRecognizeReceiptCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelRecognizeAndParseInvoiceCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -109,7 +109,7 @@ public class RecognizeReceiptApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeReceipt");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeAndParseInvoice");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -140,18 +140,18 @@ public class RecognizeReceiptApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelRecognizeReceiptValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelRecognizeAndParseInvoiceValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling cancelRecognizeReceipt(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling cancelRecognizeAndParseInvoice(Async)");
         }
 
-        return cancelRecognizeReceiptCall(id, _callback);
+        return cancelRecognizeAndParseInvoiceCall(id, _callback);
 
     }
 
     /**
-     * CancelRecognizeReceipt
+     * CancelRecognizeAndParseInvoice
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -161,12 +161,12 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public void cancelRecognizeReceipt(String id) throws ApiException {
-        cancelRecognizeReceiptWithHttpInfo(id);
+    public void cancelRecognizeAndParseInvoice(String id) throws ApiException {
+        cancelRecognizeAndParseInvoiceWithHttpInfo(id);
     }
 
     /**
-     * CancelRecognizeReceipt
+     * CancelRecognizeAndParseInvoice
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -177,13 +177,13 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> cancelRecognizeReceiptWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = cancelRecognizeReceiptValidateBeforeCall(id, null);
+    public ApiResponse<Void> cancelRecognizeAndParseInvoiceWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = cancelRecognizeAndParseInvoiceValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * CancelRecognizeReceipt (asynchronously)
+     * CancelRecognizeAndParseInvoice (asynchronously)
      * 
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -195,14 +195,14 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelRecognizeReceiptAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call cancelRecognizeAndParseInvoiceAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelRecognizeReceiptValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = cancelRecognizeAndParseInvoiceValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getRecognizeReceipt
+     * Build call for getRecognizeAndParseInvoice
      * @param id Task id to select the result (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -213,7 +213,7 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecognizeReceiptCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecognizeAndParseInvoiceCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -230,7 +230,7 @@ public class RecognizeReceiptApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeReceipt");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeAndParseInvoice");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -262,18 +262,18 @@ public class RecognizeReceiptApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecognizeReceiptValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecognizeAndParseInvoiceValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getRecognizeReceipt(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling getRecognizeAndParseInvoice(Async)");
         }
 
-        return getRecognizeReceiptCall(id, _callback);
+        return getRecognizeAndParseInvoiceCall(id, _callback);
 
     }
 
     /**
-     * GetRecognizeReceipt
+     * GetRecognizeAndParseInvoice
      * 
      * @param id Task id to select the result (required)
      * @return OCRResponse
@@ -284,13 +284,13 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public OCRResponse getRecognizeReceipt(String id) throws ApiException {
-        ApiResponse<OCRResponse> localVarResp = getRecognizeReceiptWithHttpInfo(id);
+    public OCRResponse getRecognizeAndParseInvoice(String id) throws ApiException {
+        ApiResponse<OCRResponse> localVarResp = getRecognizeAndParseInvoiceWithHttpInfo(id);
         return localVarResp.getData();
     }
 
     /**
-     * GetRecognizeReceipt
+     * GetRecognizeAndParseInvoice
      * 
      * @param id Task id to select the result (required)
      * @return ApiResponse&lt;OCRResponse&gt;
@@ -301,14 +301,14 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OCRResponse> getRecognizeReceiptWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = getRecognizeReceiptValidateBeforeCall(id, null);
+    public ApiResponse<OCRResponse> getRecognizeAndParseInvoiceWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getRecognizeAndParseInvoiceValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OCRResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * GetRecognizeReceipt (asynchronously)
+     * GetRecognizeAndParseInvoice (asynchronously)
      * 
      * @param id Task id to select the result (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -320,27 +320,27 @@ public class RecognizeReceiptApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecognizeReceiptAsync(String id, final ApiCallback<OCRResponse> _callback) throws ApiException {
+    public okhttp3.Call getRecognizeAndParseInvoiceAsync(String id, final ApiCallback<OCRResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRecognizeReceiptValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = getRecognizeAndParseInvoiceValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OCRResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for postRecognizeReceipt
-     * @param ocRRecognizeReceiptBody  (required)
+     * Build call for postRecognizeAndParseInvoice
+     * @param ocRRecognizeAndParseInvoiceBody  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRecognizeReceiptCall(OCRRecognizeReceiptBody ocRRecognizeReceiptBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postRecognizeAndParseInvoiceCall(OCRRecognizeAndParseInvoiceBody ocRRecognizeAndParseInvoiceBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -354,10 +354,10 @@ public class RecognizeReceiptApi {
             basePath = null;
         }
 
-        Object localVarPostBody = ocRRecognizeReceiptBody;
+        Object localVarPostBody = ocRRecognizeAndParseInvoiceBody;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeReceipt");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeAndParseInvoice");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -386,70 +386,70 @@ public class RecognizeReceiptApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postRecognizeReceiptValidateBeforeCall(OCRRecognizeReceiptBody ocRRecognizeReceiptBody, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'ocRRecognizeReceiptBody' is set
-        if (ocRRecognizeReceiptBody == null) {
-            throw new ApiException("Missing the required parameter 'ocRRecognizeReceiptBody' when calling postRecognizeReceipt(Async)");
+    private okhttp3.Call postRecognizeAndParseInvoiceValidateBeforeCall(OCRRecognizeAndParseInvoiceBody ocRRecognizeAndParseInvoiceBody, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ocRRecognizeAndParseInvoiceBody' is set
+        if (ocRRecognizeAndParseInvoiceBody == null) {
+            throw new ApiException("Missing the required parameter 'ocRRecognizeAndParseInvoiceBody' when calling postRecognizeAndParseInvoice(Async)");
         }
 
-        return postRecognizeReceiptCall(ocRRecognizeReceiptBody, _callback);
+        return postRecognizeAndParseInvoiceCall(ocRRecognizeAndParseInvoiceBody, _callback);
 
     }
 
     /**
-     * PostRecognizeReceipt
+     * PostRecognizeAndParseInvoice
      * 
-     * @param ocRRecognizeReceiptBody  (required)
+     * @param ocRRecognizeAndParseInvoiceBody  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public String postRecognizeReceipt(OCRRecognizeReceiptBody ocRRecognizeReceiptBody) throws ApiException {
-        ApiResponse<String> localVarResp = postRecognizeReceiptWithHttpInfo(ocRRecognizeReceiptBody);
+    public String postRecognizeAndParseInvoice(OCRRecognizeAndParseInvoiceBody ocRRecognizeAndParseInvoiceBody) throws ApiException {
+        ApiResponse<String> localVarResp = postRecognizeAndParseInvoiceWithHttpInfo(ocRRecognizeAndParseInvoiceBody);
         return localVarResp.getData();
     }
 
     /**
-     * PostRecognizeReceipt
+     * PostRecognizeAndParseInvoice
      * 
-     * @param ocRRecognizeReceiptBody  (required)
+     * @param ocRRecognizeAndParseInvoiceBody  (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> postRecognizeReceiptWithHttpInfo(OCRRecognizeReceiptBody ocRRecognizeReceiptBody) throws ApiException {
-        okhttp3.Call localVarCall = postRecognizeReceiptValidateBeforeCall(ocRRecognizeReceiptBody, null);
+    public ApiResponse<String> postRecognizeAndParseInvoiceWithHttpInfo(OCRRecognizeAndParseInvoiceBody ocRRecognizeAndParseInvoiceBody) throws ApiException {
+        okhttp3.Call localVarCall = postRecognizeAndParseInvoiceValidateBeforeCall(ocRRecognizeAndParseInvoiceBody, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * PostRecognizeReceipt (asynchronously)
+     * PostRecognizeAndParseInvoice (asynchronously)
      * 
-     * @param ocRRecognizeReceiptBody  (required)
+     * @param ocRRecognizeAndParseInvoiceBody  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postRecognizeReceiptAsync(OCRRecognizeReceiptBody ocRRecognizeReceiptBody, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call postRecognizeAndParseInvoiceAsync(OCRRecognizeAndParseInvoiceBody ocRRecognizeAndParseInvoiceBody, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postRecognizeReceiptValidateBeforeCall(ocRRecognizeReceiptBody, _callback);
+        okhttp3.Call localVarCall = postRecognizeAndParseInvoiceValidateBeforeCall(ocRRecognizeAndParseInvoiceBody, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
