@@ -5,7 +5,7 @@
     <artifactId>aspose-ocr-cloud-android</artifactId>
     <packaging>jar</packaging>
     <name>aspose-ocr-cloud-android</name>
-    <version>23.11.0</version>
+    <version>23.12.0</version>
     <url>https://products.aspose.cloud/ocr/android</url>
     <description>Aspose cloud Android SDK</description>
     <scm>
@@ -369,12 +369,25 @@
 		<name>Aspose Cloud Java Repository</name>
 		<url>https://releases.aspose.cloud/java/repo/</url>
 		</repository>
+        
+		<repository>
+		<id>AsposeCloudJavaQARepository</id>
+		<name>Aspose Cloud Java QA Repository</name>
+		<url>https://releases-qa.aspose.cloud/java/repo/</url>
+		</repository>
     </repositories>
     
-    <distributionManagement>	        
+    <distributionManagement>	
+        <!-- QA repo management -->
         <repository>
+            <id>aspose-cloud-s3-repo-ci-qa</id>
+            <url>s3://data-qa.repository.aspose.cloud/java/repo/</url>
+        </repository>
+        
+        <!-- Productive repo creds -->
+        <!-- <repository>
             <id>aspose-cloud-s3-repo-ci</id>
             <url>s3://data.repository.aspose.cloud/java/repo/</url>
-        </repository>
+        </repository> -->
     </distributionManagement>
 </project>

@@ -49,7 +49,7 @@ import Aspose.OCR.Cloud.SDK.JSON;
 /**
  * Error to return to SDK client
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-30T20:17:04.655+03:00[GMT+03:00]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-22T01:46:21.784+03:00[GMT+03:00]")
 public class OCRError {
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)

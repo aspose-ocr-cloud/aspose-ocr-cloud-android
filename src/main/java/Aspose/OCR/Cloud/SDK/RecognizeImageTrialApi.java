@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Aspose.OCR.Cloud.SDK.model.TTSBody;
-import Aspose.OCR.Cloud.SDK.model.TTSResponse;
+import Aspose.OCR.Cloud.SDK.model.OCRRecognizeImageBody;
+import Aspose.OCR.Cloud.SDK.model.OCRResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -38,20 +38,20 @@ import java.util.Map;
 import javax.ws.rs.core.GenericType;
 import java.util.regex.Pattern;
 
-public class ConvertTextToSpeechTrialApi {
+public class RecognizeImageTrialApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public ConvertTextToSpeechTrialApi() {
+    public RecognizeImageTrialApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public ConvertTextToSpeechTrialApi(ApiClient apiClient) {
+    public RecognizeImageTrialApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
-    public ConvertTextToSpeechTrialApi(String clientId, String clientSecret) {
+    public RecognizeImageTrialApi(String clientId, String clientSecret) {
         this(new ApiClient(clientId, clientSecret, null));
     }
 
@@ -80,7 +80,7 @@ public class ConvertTextToSpeechTrialApi {
     }
 
     /**
-     * Build call for cancelConvertTextToSpeechTrial
+     * Build call for cancelRecognizeImageTrial
      * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +91,7 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelConvertTextToSpeechTrialCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelRecognizeImageTrialCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -108,7 +108,7 @@ public class ConvertTextToSpeechTrialApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/ConvertTextToSpeechTrial");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeImageTrial");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -139,18 +139,18 @@ public class ConvertTextToSpeechTrialApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelConvertTextToSpeechTrialValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelRecognizeImageTrialValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling cancelConvertTextToSpeechTrial(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling cancelRecognizeImageTrial(Async)");
         }
 
-        return cancelConvertTextToSpeechTrialCall(id, _callback);
+        return cancelRecognizeImageTrialCall(id, _callback);
 
     }
 
     /**
-     * CancelConvertTextToSpeechTrial
+     * CancelRecognizeImageTrial
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -160,12 +160,12 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public void cancelConvertTextToSpeechTrial(String id) throws ApiException {
-        cancelConvertTextToSpeechTrialWithHttpInfo(id);
+    public void cancelRecognizeImageTrial(String id) throws ApiException {
+        cancelRecognizeImageTrialWithHttpInfo(id);
     }
 
     /**
-     * CancelConvertTextToSpeechTrial
+     * CancelRecognizeImageTrial
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -176,13 +176,13 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> cancelConvertTextToSpeechTrialWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = cancelConvertTextToSpeechTrialValidateBeforeCall(id, null);
+    public ApiResponse<Void> cancelRecognizeImageTrialWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = cancelRecognizeImageTrialValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * CancelConvertTextToSpeechTrial (asynchronously)
+     * CancelRecognizeImageTrial (asynchronously)
      * 
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -194,14 +194,14 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelConvertTextToSpeechTrialAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call cancelRecognizeImageTrialAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = cancelConvertTextToSpeechTrialValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = cancelRecognizeImageTrialValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getConvertTextToSpeechTrial
+     * Build call for getRecognizeImageTrial
      * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -212,7 +212,7 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConvertTextToSpeechTrialCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecognizeImageTrialCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -229,7 +229,7 @@ public class ConvertTextToSpeechTrialApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/ConvertTextToSpeechTrial");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeImageTrial");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -261,21 +261,21 @@ public class ConvertTextToSpeechTrialApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConvertTextToSpeechTrialValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecognizeImageTrialValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getConvertTextToSpeechTrial(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling getRecognizeImageTrial(Async)");
         }
 
-        return getConvertTextToSpeechTrialCall(id, _callback);
+        return getRecognizeImageTrialCall(id, _callback);
 
     }
 
     /**
-     * GetConvertTextToSpeechTrial
+     * GetRecognizeImageTrial
      * 
      * @param id  (required)
-     * @return TTSResponse
+     * @return OCRResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -283,16 +283,16 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public TTSResponse getConvertTextToSpeechTrial(String id) throws ApiException {
-        ApiResponse<TTSResponse> localVarResp = getConvertTextToSpeechTrialWithHttpInfo(id);
+    public OCRResponse getRecognizeImageTrial(String id) throws ApiException {
+        ApiResponse<OCRResponse> localVarResp = getRecognizeImageTrialWithHttpInfo(id);
         return localVarResp.getData();
     }
 
     /**
-     * GetConvertTextToSpeechTrial
+     * GetRecognizeImageTrial
      * 
      * @param id  (required)
-     * @return ApiResponse&lt;TTSResponse&gt;
+     * @return ApiResponse&lt;OCRResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -300,14 +300,14 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TTSResponse> getConvertTextToSpeechTrialWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = getConvertTextToSpeechTrialValidateBeforeCall(id, null);
-        Type localVarReturnType = new TypeToken<TTSResponse>(){}.getType();
+    public ApiResponse<OCRResponse> getRecognizeImageTrialWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getRecognizeImageTrialValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<OCRResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * GetConvertTextToSpeechTrial (asynchronously)
+     * GetRecognizeImageTrial (asynchronously)
      * 
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -319,16 +319,16 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConvertTextToSpeechTrialAsync(String id, final ApiCallback<TTSResponse> _callback) throws ApiException {
+    public okhttp3.Call getRecognizeImageTrialAsync(String id, final ApiCallback<OCRResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getConvertTextToSpeechTrialValidateBeforeCall(id, _callback);
-        Type localVarReturnType = new TypeToken<TTSResponse>(){}.getType();
+        okhttp3.Call localVarCall = getRecognizeImageTrialValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<OCRResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for postConvertTextToSpeechTrial
-     * @param ttSBody  (required)
+     * Build call for postRecognizeImageTrial
+     * @param ocRRecognizeImageBody  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -338,7 +338,7 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postConvertTextToSpeechTrialCall(TTSBody ttSBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postRecognizeImageTrialCall(OCRRecognizeImageBody ocRRecognizeImageBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -352,10 +352,10 @@ public class ConvertTextToSpeechTrialApi {
             basePath = null;
         }
 
-        Object localVarPostBody = ttSBody;
+        Object localVarPostBody = ocRRecognizeImageBody;
 
         // create path and map variables
-        String localVarPath = getAdjustedPath("/v5.0/ocr/ConvertTextToSpeechTrial");
+        String localVarPath = getAdjustedPath("/v5.0/ocr/RecognizeImageTrial");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -384,20 +384,20 @@ public class ConvertTextToSpeechTrialApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postConvertTextToSpeechTrialValidateBeforeCall(TTSBody ttSBody, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'ttSBody' is set
-        if (ttSBody == null) {
-            throw new ApiException("Missing the required parameter 'ttSBody' when calling postConvertTextToSpeechTrial(Async)");
+    private okhttp3.Call postRecognizeImageTrialValidateBeforeCall(OCRRecognizeImageBody ocRRecognizeImageBody, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'ocRRecognizeImageBody' is set
+        if (ocRRecognizeImageBody == null) {
+            throw new ApiException("Missing the required parameter 'ocRRecognizeImageBody' when calling postRecognizeImageTrial(Async)");
         }
 
-        return postConvertTextToSpeechTrialCall(ttSBody, _callback);
+        return postRecognizeImageTrialCall(ocRRecognizeImageBody, _callback);
 
     }
 
     /**
-     * PostConvertTextToSpeechTrial
+     * PostRecognizeImageTrial
      * 
-     * @param ttSBody  (required)
+     * @param ocRRecognizeImageBody  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -406,15 +406,15 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public String postConvertTextToSpeechTrial(TTSBody ttSBody) throws ApiException {
-        ApiResponse<String> localVarResp = postConvertTextToSpeechTrialWithHttpInfo(ttSBody);
+    public String postRecognizeImageTrial(OCRRecognizeImageBody ocRRecognizeImageBody) throws ApiException {
+        ApiResponse<String> localVarResp = postRecognizeImageTrialWithHttpInfo(ocRRecognizeImageBody);
         return localVarResp.getData();
     }
 
     /**
-     * PostConvertTextToSpeechTrial
+     * PostRecognizeImageTrial
      * 
-     * @param ttSBody  (required)
+     * @param ocRRecognizeImageBody  (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -423,16 +423,16 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> postConvertTextToSpeechTrialWithHttpInfo(TTSBody ttSBody) throws ApiException {
-        okhttp3.Call localVarCall = postConvertTextToSpeechTrialValidateBeforeCall(ttSBody, null);
+    public ApiResponse<String> postRecognizeImageTrialWithHttpInfo(OCRRecognizeImageBody ocRRecognizeImageBody) throws ApiException {
+        okhttp3.Call localVarCall = postRecognizeImageTrialValidateBeforeCall(ocRRecognizeImageBody, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * PostConvertTextToSpeechTrial (asynchronously)
+     * PostRecognizeImageTrial (asynchronously)
      * 
-     * @param ttSBody  (required)
+     * @param ocRRecognizeImageBody  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -442,9 +442,9 @@ public class ConvertTextToSpeechTrialApi {
         <tr><td> 200 </td><td> Task unique ID </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postConvertTextToSpeechTrialAsync(TTSBody ttSBody, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call postRecognizeImageTrialAsync(OCRRecognizeImageBody ocRRecognizeImageBody, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postConvertTextToSpeechTrialValidateBeforeCall(ttSBody, _callback);
+        okhttp3.Call localVarCall = postRecognizeImageTrialValidateBeforeCall(ocRRecognizeImageBody, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

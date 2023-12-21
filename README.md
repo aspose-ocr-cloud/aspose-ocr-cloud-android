@@ -1,6 +1,4 @@
-<img src="./resources/heading.png">
-
-# Aspose.OCR Cloud for Android SDK 23.11.0
+# Aspose.OCR Cloud for Java SDK 23.12.0
 
 [![License](https://img.shields.io/github/license/aspose-ocr-cloud/aspose-ocr-cloud-dotnet)](LICENSE)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.OCR-Cloud)](https://www.nuget.org/packages/Aspose.OCR-Cloud/)
@@ -9,72 +7,38 @@
 
 Our engine can read text from images, photos, screenshots and scanned PDFs in a wide variety of European, Cyrillic and Oriental fonts, returning results in the most popular document formats. Powerful built-in image processing filters based on neural networks automatically correct skewed and distorted images, automatically remove dirt, smudges, scratches, glare and other image defects that can affect recognition accuracy. To further improve the results, Aspose.OCR Cloud has a built-in spell checker that automatically replaces misspelled words and saves you the trouble of manually correcting the recognition results.
 
-Even the complex recognition tasks can be done with a couple of API calls. To make interacting with Aspose.OCR Cloud services from Android applications even easier, we provide the software development kit (SDK) for Android. It handles all the routine operations such as establishing connections, sending API requests, and parsing responses, wrapping all these tasks into a few simple classes.
+Even the complex recognition tasks can be done with a couple of API calls. To make interacting with Aspose.OCR Cloud services from .NET applications even easier, we provide the software development kit (SDK) for .NET. It handles all the routine operations such as establishing connections, sending API requests, and parsing responses, wrapping all these tasks into a few simple classes.
 
-Aspose.OCR Cloud SDK for Android is open source under the MIT license. You can freely use it for any projects, including commercial and proprietary applications, as well as modify any part of its code.
+Aspose.OCR Cloud SDK for .NET is open source under the MIT license. You can freely use it for any projects, including commercial and proprietary applications, as well as modify any part of its code.
 
 ## Try Online
 [Image to Text](https://products.aspose.app/ocr/scan-image) | [Image to Searchable PDF](https://products.aspose.app/ocr/ocr-to-pdf) | [PDF OCR](https://products.aspose.app/ocr/pdf-ocr)| [Receipt Scanner](https://products.aspose.app/ocr/scan-receipt)
 :---: | :---: | :---:| :---:
 [![Scan Image](https://products.aspose.app/ocr/scan-image/img/ocr-recognize-48.png)](https://products.aspose.app/ocr/scan-image) | [![Image to Searchable PDF](https://products.aspose.app/ocr/scan-image/img/ocr-to-pdf-4-48.png)](https://products.aspose.app/ocr/ocr-to-pdf) | [![PDF OCR](https://products.aspose.app/ocr/scan-image/img/ocr-to-pdf-2-48.png)](https://products.aspose.app/ocr/pdf-ocr) | [![Receipt Scanner](https://products.aspose.app/ocr/scan-image/img/aspose-scan-receipt-48.png)](https://products.aspose.app/ocr/scan-receipt) 
 
-## What was changed in version 23.11.0
+## What was changed in version 23.12.0
 
-A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for Android 23.11.0** release:
+A summary of recent changes, enhancements and bug fixes in **Aspose.OCR Cloud SDK for Android 23.12.0** release:
 
 Key | Summary | Category
 --- | ------- | --------
-OCR&#8209;3560 | Added an API for extracting structured information from scanned invoices. | New feature
-OCR&#8209;3722 | Added a free API for evaluating text-to-speech conversion that works without [authorization](/ocr/authorization/).<br />Some restrictions apply. See below for details. | New feature
-OCR&#8209;3171 | Added an API for getting [task status](/ocr/recognition-workflow/#3-fetch-the-recognition-result) without downloading a full recognition result. | Enhancement
-
-REST API changes: https://releases.aspose.cloud/ocr/release-notes/2023/aspose-ocr-cloud-23-11-0-release-notes/
-
-### Public API changes and backwards compatibility
-
-This section lists all public API changes introduced in **Aspose.OCR Cloud SDK for Android 23.11.0** that may affect the code of existing applications.
+OCR&#8209;3737 | Added a free API for evaluating image recognition without [authorization](/ocr/authorization/).<br />Some restrictions apply. See below for details. | New feature
 
 #### Added public APIs:
 
 The following public APIs have been introduced in this release:
 
-##### Extracting structured information from invoice
-
-The following new classes have been added for extracting structured information in JSON format from scanned or photographed invoices:
-
-Class | Description
------ | -----------
-`RecognizeAndParseInvoiceApi` | Invoice processing API.
-`OCRSettingsRecognizeAndParseInvoice` | Invoice processing settings.
-`OCRRecognizeAndParseInvoiceBody` | Invoice processing request body.
-
-[Learn more...](https://docs.aspose.cloud/ocr/recognize-parse-invoice/)
-
-##### Text-to-speech evaluation
+##### Image recognition evaluation
 
 The following new classes have been added:
 
 Class | Description
 ----- | -----------
-`ConvertTextToSpeechTrialApi` | Evaluation text-to-speech conversion API (without authorization).
+`RecognizeImageTrialApi` | Image recognition API that works without authorization.
 
-The evaluation mode has some limitations:
+**Important:** In recognition results, 10% of the words are substituted with asterisks (`*`). The sequence of masked words remains unchanged upon re-submitting the identical image for recognition.
 
-- **10** requests per day from a single IP address.
-- The text size must not exceed **500** characters, including spaces and punctuation.
-- The phrase _"Please authenticate to the API to remove this message"_ is inserted at a random position within the generated audio.
-
-[Learn more...](https://docs.aspose.cloud/ocr/text-to-speech/)
-
-##### Quickly fetch processing status
-
-The following new classes have been added:
-
-Class | Description
------ | -----------
-`UtilitiesApi` | Universal API for various management and monitoring purposes.
-
-[Learn more...](https://docs.aspose.cloud/ocr/subscription/)
+[Learn more...](https://docs.aspose.cloud/ocr/recognize-image/)
 
 #### Updated public APIs:
 
@@ -84,126 +48,286 @@ _No changes_
 
 _No changes._
 
+## Requirements
 
-## Quickstart
+Building the API client library requires:
+1. Java 1.8+
+2. Maven (3.8.3+)/Gradle (7.2+)
 
-Make your solution using [SDK](#asposeocr-cloud-sdks), follow these steps:
+## Installation
 
-#### 1. Get API keys if you haven't
+To install the API client library to your local Maven repository, simply execute:
 
-Make a personal account on [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/) and click _Get Keys_. These keys are useful for all Aspose Cloud products. If you have any trouble, look at this [detailed manual](https://docs.aspose.cloud/total/create-new-app-and-get-app-key-and-sid/).
-
-#### 2. Run Demo
-  
-  * Open [Android example](example) project with Android Studio 
-  * Set Your Client Id & Client Secret
-  * Run on Android API level 26 compatible device or emulator
-
-#### 3. Add rpository and dependencies to your build system
-  
-##### Gradle users
-
-Add this dependency to your project's gradle scripts:
-
-<p class="codeblock-label">settings.gradle</p>
-
-```groovy     
-    
-dependencyResolutionManagement {
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-            url 'https://releases.aspose.cloud/java/repo'
-        }
-    }
-}
-
+```shell
+mvn clean install
 ```
 
-<p class="codeblock-label">build.gradle</p>
+To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
 
-```groovy     
-
-    implementation ('com.aspose:aspose-ocr-cloud-android:23.11.0') {
-        exclude group:'org.apache.oltu.oauth2' , module: 'org.apache.oltu.oauth2.common'
-        exclude group: 'javax.ws.rs'
-    }
-
+```shell
+mvn clean deploy
 ```
-#### 4. Import dependencies and add sample code where you need
+
+Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
+
+### Maven users
+
+Add this dependency to your project's POM:
+
+```xml
+<dependency>
+  <groupId>com.aspose</groupId>
+  <artifactId>aspose-ocr-cloud-android</artifactId>
+  <version>23.12.0</version>
+  <scope>compile</scope>
+</dependency>
+```
+
+### Gradle users
+
+Add this dependency to your project's build file:
+
+```groovy
+  repositories {
+    mavenCentral()     // Needed if the 'aspose-ocr-cloud-android' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'aspose-ocr-cloud-android' jar has been published to the local maven repo.
+  }
+
+  dependencies {
+     implementation "com.aspose:aspose-ocr-cloud-android:23.12.0"
+  }
+```
+
+### Others
+
+At first generate the JAR by executing:
+
+```shell
+mvn clean package
+```
+
+Then manually install the following JARs:
+
+* `target/aspose-ocr-cloud-android-23.12.0.jar`
+* `target/lib/*.jar`
+
+## Getting Started
+
+Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-    
-            String clientId = "PUT YOUR CLIENT ID HERE";
-            String clientSecret = "PUT YOUR CLIENT SECRET HERE";
-            System.out.println("Warning: the following action will reduce the number of API calls available " +
-                    "to your account in the current period. \n ");
 
-            RecognizeImageApi api = new RecognizeImageApi(clientId, clientSecret);
-            OCRSettingsRecognizeImage settings = new OCRSettingsRecognizeImage();
-            settings.setLanguage(Language.ENGLISH);
-            settings.setDsrConfidence(DsrConfidence.DEFAULT);
-            settings.setDsrMode(DsrMode.NODSRNOFILTER);
-            settings.setMakeBinarization(false);
-            settings.setMakeSkewCorrect(false);
-            settings.setMakeContrastCorrection(false);
-            settings.setMakeUpsampling(false);
-            settings.setResultType(ResultType.TEXT);
+// Import classes:
+import Aspose.OCR.Cloud.SDK.RecognizeImageApi;
+import Aspose.OCR.Cloud.SDK.model.*;
 
-            String imageFileName = "samples/latin.png";
-            InputStream inputStream = context.getAssets().open(imageFileName);
-            int size = inputStream.available();
-            byte[] imageData = new byte[size];
-            inputStream.read(imageData);
-            inputStream.close();
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-            OCRRecognizeImageBody requestBody = new OCRRecognizeImageBody();
-            requestBody.setImage(imageData);
-            requestBody.setSettings(settings);
 
-            System.out.println("Sending sample image (" + imageFileName +") to RecognizeImageApi...");
-            String taskId = api.postRecognizeImage(requestBody);
+public class Example {
+  public static void main(String[] args) {
+    String clientId = "";
+    String clientSecret = "";
+    // Creating new API instance with your credentials
+    RecognizeImageApi api = new RecognizeImageApi(clientId, clientSecret);
 
-            System.out.println("File successfully sent. Your credentials accepted. " +
-                    "Your task ID is " + taskId + "\nGetting task results...");
-            OCRResponse apiResponse = api.getRecognizeImage(taskId);
+    // Creating recognition settings object
+    OCRSettingsRecognizeImage settings = new OCRSettingsRecognizeImage();
+    settings.setLanguage(Language.ENGLISH);
+    settings.setDsrConfidence(DsrConfidence.DEFAULT);
+    settings.setDsrMode(DsrMode.NODSRNOFILTER);
+    settings.setMakeBinarization(false);
+    settings.setMakeSkewCorrect(false);
+    settings.setMakeContrastCorrection(false);
+    settings.setMakeUpsampling(false);
+    settings.setResultType(ResultType.TEXT);
 
-            System.out.println(new String(apiResponse.getResults().get(0).getData(), StandardCharsets.UTF_8) + "\n\n");
-            System.out.println("Respose received with status " + apiResponse.getTaskStatus().getValue() +"\n\n");
-            String result = new String(apiResponse.getResults().get(0).getData(), StandardCharsets.UTF_8);
-            System.out.println(result);
+    // Reading image file to array of bytes
+    String imageFileName = "samples\\latin.png";
+    byte[] imageData = Files.readAllBytes(Path.of(imageFileName));
+
+    // Combining settings and image to request body
+    OCRRecognizeImageBody requestBody = new OCRRecognizeImageBody();
+    requestBody.setImage(imageData);
+    requestBody.setSettings(settings);
+
+    // Sending request to cloud API and getting task ID
+    String taskId = api.postRecognizeImage(requestBody);
+
+    // Getting result data with second request
+    OCRResponse apiResponse = api.getRecognizeImage(taskId);
+
+    // Extracting result text from response
+    System.out.println(new String(apiResponse.getResults().get(0).getData(), StandardCharsets.UTF_8) + "\n\n");
+
+  }
+}
 ```
 
-#### 5. Follow [API documentation](.\target\apidocs\index.html) for detailed usage information
+### Running demo
+
+1. Open [Examples](/example) demo project.
+2. Provide your **Client ID** and **Client Secret** (see _Authorization_ above).
+3. Run the project.
 
 
-<p align="center">
-  <a title="Download ZIP" href="https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android/archive/master.zip">
-     <img src="./resources/download.png" />
-  </a>
-</p>
+### Authorization
+
+Aspose.OCR Cloud follows industry standards and best practices to keep your data secure. All communication with OCR REST API is done using JWT authentication, which provides an open-standard, highly secure way to exchange information. Time-limited JWT tokens are generated using _Client ID_ and _Client Secret_ credentials that are specific for each application. To obtain the credentials:
+
+1. Sign in to [Aspose Cloud API Dashboard](https://dashboard.aspose.cloud/).
+2. Go to [**Applications**](https://dashboard.aspose.cloud/applications) page.
+3. Click **Create New Application** button.
+4. Give the application an easily recognizable name so it can be quickly found in a long list, and provide an optional detailed description.
+5. Create the cloud storage by clicking the _plus_ icon and following the required steps. You can also reuse existing storage, if available.   
+   Aspose.OCR Cloud uses its own internal storage, so you can provide the bare minimum storage options:
+
+    - Type: **Internal storage**
+    - Storage name: _Any name you like_
+    - Storage mode: **Retain files for 24 hours**
+
+6. Click **Save** button.
+7. Click the newly created application and copy the values from **Client Id** and **Client Secret** fields.
+8. Pass in the values from the **Client ID** and **Client Secret** fields when initializing the required OCR API.
+
+## Documentation for API Endpoints
+
+All URIs are relative to *http://localhost*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*BinarizeImageApi* | [**cancelBinarizeImage**](docs/BinarizeImageApi.md#cancelBinarizeImage) | **DELETE** /v5.0/ocr/BinarizeImage | CancelBinarizeImage
+*BinarizeImageApi* | [**getBinarizeImage**](docs/BinarizeImageApi.md#getBinarizeImage) | **GET** /v5.0/ocr/BinarizeImage | GetBinarizeImage
+*BinarizeImageApi* | [**postBinarizeImage**](docs/BinarizeImageApi.md#postBinarizeImage) | **POST** /v5.0/ocr/BinarizeImage | PostBinarizeImage
+*ConvertTextToSpeechApi* | [**cancelConvertTextToSpeech**](docs/ConvertTextToSpeechApi.md#cancelConvertTextToSpeech) | **DELETE** /v5.0/ocr/ConvertTextToSpeech | CancelConvertTextToSpeech
+*ConvertTextToSpeechApi* | [**getConvertTextToSpeech**](docs/ConvertTextToSpeechApi.md#getConvertTextToSpeech) | **GET** /v5.0/ocr/ConvertTextToSpeech | GetConvertTextToSpeech
+*ConvertTextToSpeechApi* | [**postConvertTextToSpeech**](docs/ConvertTextToSpeechApi.md#postConvertTextToSpeech) | **POST** /v5.0/ocr/ConvertTextToSpeech | PostConvertTextToSpeech
+*ConvertTextToSpeechTrialApi* | [**cancelConvertTextToSpeechTrial**](docs/ConvertTextToSpeechTrialApi.md#cancelConvertTextToSpeechTrial) | **DELETE** /v5.0/ocr/ConvertTextToSpeechTrial | CancelConvertTextToSpeechTrial
+*ConvertTextToSpeechTrialApi* | [**getConvertTextToSpeechTrial**](docs/ConvertTextToSpeechTrialApi.md#getConvertTextToSpeechTrial) | **GET** /v5.0/ocr/ConvertTextToSpeechTrial | GetConvertTextToSpeechTrial
+*ConvertTextToSpeechTrialApi* | [**postConvertTextToSpeechTrial**](docs/ConvertTextToSpeechTrialApi.md#postConvertTextToSpeechTrial) | **POST** /v5.0/ocr/ConvertTextToSpeechTrial | PostConvertTextToSpeechTrial
+*DeskewImageApi* | [**cancelDeskewImage**](docs/DeskewImageApi.md#cancelDeskewImage) | **DELETE** /v5.0/ocr/DeskewImage | CancelDeskewImage
+*DeskewImageApi* | [**getDeskewImage**](docs/DeskewImageApi.md#getDeskewImage) | **GET** /v5.0/ocr/DeskewImage | GetDeskewImage
+*DeskewImageApi* | [**postDeskewImage**](docs/DeskewImageApi.md#postDeskewImage) | **POST** /v5.0/ocr/DeskewImage | PostDeskewImage
+*DetectRegionsApi* | [**cancelDetectRegions**](docs/DetectRegionsApi.md#cancelDetectRegions) | **DELETE** /v5.0/ocr/DetectRegions | CancelDetectRegions
+*DetectRegionsApi* | [**getDetectRegions**](docs/DetectRegionsApi.md#getDetectRegions) | **GET** /v5.0/ocr/DetectRegions | GetDetectRegions
+*DetectRegionsApi* | [**postDetectRegions**](docs/DetectRegionsApi.md#postDetectRegions) | **POST** /v5.0/ocr/DetectRegions | PostDetectRegions
+*DewarpImageApi* | [**cancelDewarpImage**](docs/DewarpImageApi.md#cancelDewarpImage) | **DELETE** /v5.0/ocr/DewarpImage | CancelDewarpImage
+*DewarpImageApi* | [**getDewarpImage**](docs/DewarpImageApi.md#getDewarpImage) | **GET** /v5.0/ocr/DewarpImage | GetDewarpImage
+*DewarpImageApi* | [**postDewarpImage**](docs/DewarpImageApi.md#postDewarpImage) | **POST** /v5.0/ocr/DewarpImage | PostDewarpImage
+*DjVu2PdfApi* | [**cancelDjVu2PDF**](docs/DjVu2PdfApi.md#cancelDjVu2PDF) | **DELETE** /v5.0/ocr/DjVu2PDF | CancelDjVu2PDF
+*DjVu2PdfApi* | [**getDjVu2PDF**](docs/DjVu2PdfApi.md#getDjVu2PDF) | **GET** /v5.0/ocr/DjVu2PDF | GetDjVu2PDF
+*DjVu2PdfApi* | [**postDjVu2PDF**](docs/DjVu2PdfApi.md#postDjVu2PDF) | **POST** /v5.0/ocr/DjVu2PDF | PostDjVu2PDF
+*IdentifyFontApi* | [**cancelIdentifyFont**](docs/IdentifyFontApi.md#cancelIdentifyFont) | **DELETE** /v5.0/ocr/IdentifyFont | CancelIdentifyFont
+*IdentifyFontApi* | [**getIdentifyFont**](docs/IdentifyFontApi.md#getIdentifyFont) | **GET** /v5.0/ocr/IdentifyFont | GetIdentifyFont
+*IdentifyFontApi* | [**postIdentifyFont**](docs/IdentifyFontApi.md#postIdentifyFont) | **POST** /v5.0/ocr/IdentifyFont | PostIdentifyFont
+*ImageProcessingApi* | [**getResultFile**](docs/ImageProcessingApi.md#getResultFile) | **GET** /v5.0/ocr/ImageProcessing/GetResultFile | GetResultFile
+*ImageProcessingApi* | [**getResultTask**](docs/ImageProcessingApi.md#getResultTask) | **GET** /v5.0/ocr/ImageProcessing/GetResultTask | GetResultTask
+*ImageProcessingApi* | [**postBinarizationFile**](docs/ImageProcessingApi.md#postBinarizationFile) | **POST** /v5.0/ocr/ImageProcessing/PostBinarizationFile | PostBinarizationFile
+*ImageProcessingApi* | [**postDewarpingFile**](docs/ImageProcessingApi.md#postDewarpingFile) | **POST** /v5.0/ocr/ImageProcessing/PostDewarpingFile | PostDewarpingFile
+*ImageProcessingApi* | [**postSkewCorrectionFile**](docs/ImageProcessingApi.md#postSkewCorrectionFile) | **POST** /v5.0/ocr/ImageProcessing/PostSkewCorrectionFile | PostSkewCorrectionFile
+*ImageProcessingApi* | [**postUpsamplingFile**](docs/ImageProcessingApi.md#postUpsamplingFile) | **POST** /v5.0/ocr/ImageProcessing/PostUpsamplingImageFile | PostUpsamplingImageFile
+*RecognizeAndParseInvoiceApi* | [**cancelRecognizeAndParseInvoice**](docs/RecognizeAndParseInvoiceApi.md#cancelRecognizeAndParseInvoice) | **DELETE** /v5.0/ocr/RecognizeAndParseInvoice | CancelRecognizeAndParseInvoice
+*RecognizeAndParseInvoiceApi* | [**getRecognizeAndParseInvoice**](docs/RecognizeAndParseInvoiceApi.md#getRecognizeAndParseInvoice) | **GET** /v5.0/ocr/RecognizeAndParseInvoice | GetRecognizeAndParseInvoice
+*RecognizeAndParseInvoiceApi* | [**postRecognizeAndParseInvoice**](docs/RecognizeAndParseInvoiceApi.md#postRecognizeAndParseInvoice) | **POST** /v5.0/ocr/RecognizeAndParseInvoice | PostRecognizeAndParseInvoice
+*RecognizeImageApi* | [**cancelRecognizeImage**](docs/RecognizeImageApi.md#cancelRecognizeImage) | **DELETE** /v5.0/ocr/RecognizeImage | CancelRecognizeImage
+*RecognizeImageApi* | [**getRecognizeImage**](docs/RecognizeImageApi.md#getRecognizeImage) | **GET** /v5.0/ocr/RecognizeImage | GetRecognizeImage
+*RecognizeImageApi* | [**postRecognizeImage**](docs/RecognizeImageApi.md#postRecognizeImage) | **POST** /v5.0/ocr/RecognizeImage | PostRecognizeImage
+*RecognizeImageTrialApi* | [**cancelRecognizeImageTrial**](docs/RecognizeImageTrialApi.md#cancelRecognizeImageTrial) | **DELETE** /v5.0/ocr/RecognizeImageTrial | CancelRecognizeImageTrial
+*RecognizeImageTrialApi* | [**getRecognizeImageTrial**](docs/RecognizeImageTrialApi.md#getRecognizeImageTrial) | **GET** /v5.0/ocr/RecognizeImageTrial | GetRecognizeImageTrial
+*RecognizeImageTrialApi* | [**postRecognizeImageTrial**](docs/RecognizeImageTrialApi.md#postRecognizeImageTrial) | **POST** /v5.0/ocr/RecognizeImageTrial | PostRecognizeImageTrial
+*RecognizeLabelApi* | [**cancelRecognizeLabel**](docs/RecognizeLabelApi.md#cancelRecognizeLabel) | **DELETE** /v5.0/ocr/RecognizeLabel | CancelRecognizeLabel
+*RecognizeLabelApi* | [**getRecognizeLabel**](docs/RecognizeLabelApi.md#getRecognizeLabel) | **GET** /v5.0/ocr/RecognizeLabel | GetRecognizeLabel
+*RecognizeLabelApi* | [**postRecognizeLabel**](docs/RecognizeLabelApi.md#postRecognizeLabel) | **POST** /v5.0/ocr/RecognizeLabel | PostRecognizeLabel
+*RecognizePdfApi* | [**cancelRecognizePdf**](docs/RecognizePdfApi.md#cancelRecognizePdf) | **DELETE** /v5.0/ocr/RecognizePdf | CancelRecognizePdf
+*RecognizePdfApi* | [**getRecognizePdf**](docs/RecognizePdfApi.md#getRecognizePdf) | **GET** /v5.0/ocr/RecognizePdf | GetRecognizePdf
+*RecognizePdfApi* | [**postRecognizePdf**](docs/RecognizePdfApi.md#postRecognizePdf) | **POST** /v5.0/ocr/RecognizePdf | PostRecognizePdf
+*RecognizeReceiptApi* | [**cancelRecognizeReceipt**](docs/RecognizeReceiptApi.md#cancelRecognizeReceipt) | **DELETE** /v5.0/ocr/RecognizeReceipt | CancelRecognizeReceipt
+*RecognizeReceiptApi* | [**getRecognizeReceipt**](docs/RecognizeReceiptApi.md#getRecognizeReceipt) | **GET** /v5.0/ocr/RecognizeReceipt | GetRecognizeReceipt
+*RecognizeReceiptApi* | [**postRecognizeReceipt**](docs/RecognizeReceiptApi.md#postRecognizeReceipt) | **POST** /v5.0/ocr/RecognizeReceipt | PostRecognizeReceipt
+*RecognizeRegionsApi* | [**cancelRecognizeRegions**](docs/RecognizeRegionsApi.md#cancelRecognizeRegions) | **DELETE** /v5.0/ocr/RecognizeRegions | CancelRecognizeRegions
+*RecognizeRegionsApi* | [**getRecognizeRegions**](docs/RecognizeRegionsApi.md#getRecognizeRegions) | **GET** /v5.0/ocr/RecognizeRegions | GetRecognizeRegions
+*RecognizeRegionsApi* | [**postRecognizeRegions**](docs/RecognizeRegionsApi.md#postRecognizeRegions) | **POST** /v5.0/ocr/RecognizeRegions | PostRecognizeRegions
+*RecognizeTableApi* | [**cancelRecognizeTable**](docs/RecognizeTableApi.md#cancelRecognizeTable) | **DELETE** /v5.0/ocr/RecognizeTable | CancelRecognizeTable
+*RecognizeTableApi* | [**getRecognizeTable**](docs/RecognizeTableApi.md#getRecognizeTable) | **GET** /v5.0/ocr/RecognizeTable | GetRecognizeTable
+*RecognizeTableApi* | [**postRecognizeTable**](docs/RecognizeTableApi.md#postRecognizeTable) | **POST** /v5.0/ocr/RecognizeTable | PostRecognizeTable
+*TextToSpeechApi* | [**getTextToSpeechResult**](docs/TextToSpeechApi.md#getTextToSpeechResult) | **GET** /v5.0/ocr/TextToSpeech/GetTextToSpeechResult | GetTextToSpeechResult
+*TextToSpeechApi* | [**getTextToSpeechResultFile**](docs/TextToSpeechApi.md#getTextToSpeechResultFile) | **GET** /v5.0/ocr/TextToSpeech/GetTextToSpeechResultFile | GetTextToSpeechResultFile
+*TextToSpeechApi* | [**postTextToSpeech**](docs/TextToSpeechApi.md#postTextToSpeech) | **POST** /v5.0/ocr/TextToSpeech/PostTextToSpeech | PostTextToSpeech
+*UpscaleImageApi* | [**cancelUpscaleImage**](docs/UpscaleImageApi.md#cancelUpscaleImage) | **DELETE** /v5.0/ocr/UpscaleImage | CancelUpscaleImage
+*UpscaleImageApi* | [**getUpscaleImage**](docs/UpscaleImageApi.md#getUpscaleImage) | **GET** /v5.0/ocr/UpscaleImage | GetUpscaleImage
+*UpscaleImageApi* | [**postUpscaleImage**](docs/UpscaleImageApi.md#postUpscaleImage) | **POST** /v5.0/ocr/UpscaleImage | PostUpscaleImage
+*UtilitiesApi* | [**getTaskStatus**](docs/UtilitiesApi.md#getTaskStatus) | **GET** /v5.0/ocr/Utilities/GetTaskStatus | GetTaskStatus
 
 
-## SDK Details:   
+## Documentation for Models
 
-### Structure
+ - [DsrConfidence](docs/DsrConfidence.md)
+ - [DsrMode](docs/DsrMode.md)
+ - [Language](docs/Language.md)
+ - [LanguageTTS](docs/LanguageTTS.md)
+ - [OCRBinarizeImageBody](docs/OCRBinarizeImageBody.md)
+ - [OCRDeskewImageBody](docs/OCRDeskewImageBody.md)
+ - [OCRDetectRegionsBody](docs/OCRDetectRegionsBody.md)
+ - [OCRDewarpImageBody](docs/OCRDewarpImageBody.md)
+ - [OCRDjVu2PDFBody](docs/OCRDjVu2PDFBody.md)
+ - [OCRError](docs/OCRError.md)
+ - [OCRRecognizeAndParseInvoiceBody](docs/OCRRecognizeAndParseInvoiceBody.md)
+ - [OCRRecognizeFontBody](docs/OCRRecognizeFontBody.md)
+ - [OCRRecognizeImageBody](docs/OCRRecognizeImageBody.md)
+ - [OCRRecognizeLabelBody](docs/OCRRecognizeLabelBody.md)
+ - [OCRRecognizePdfBody](docs/OCRRecognizePdfBody.md)
+ - [OCRRecognizeReceiptBody](docs/OCRRecognizeReceiptBody.md)
+ - [OCRRecognizeRegionsBody](docs/OCRRecognizeRegionsBody.md)
+ - [OCRRecognizeTableBody](docs/OCRRecognizeTableBody.md)
+ - [OCRRect](docs/OCRRect.md)
+ - [OCRRegion](docs/OCRRegion.md)
+ - [OCRResponse](docs/OCRResponse.md)
+ - [OCRResult](docs/OCRResult.md)
+ - [OCRSettingsDetectRegions](docs/OCRSettingsDetectRegions.md)
+ - [OCRSettingsDjVu2PDF](docs/OCRSettingsDjVu2PDF.md)
+ - [OCRSettingsRecognizeAndParseInvoice](docs/OCRSettingsRecognizeAndParseInvoice.md)
+ - [OCRSettingsRecognizeFont](docs/OCRSettingsRecognizeFont.md)
+ - [OCRSettingsRecognizeImage](docs/OCRSettingsRecognizeImage.md)
+ - [OCRSettingsRecognizeLabel](docs/OCRSettingsRecognizeLabel.md)
+ - [OCRSettingsRecognizePdf](docs/OCRSettingsRecognizePdf.md)
+ - [OCRSettingsRecognizeReceipt](docs/OCRSettingsRecognizeReceipt.md)
+ - [OCRSettingsRecognizeRegions](docs/OCRSettingsRecognizeRegions.md)
+ - [OCRSettingsRecognizeTable](docs/OCRSettingsRecognizeTable.md)
+ - [OCRTaskStatus](docs/OCRTaskStatus.md)
+ - [OCRUpscaleImageBody](docs/OCRUpscaleImageBody.md)
+ - [PostUpsamplingFileRequest](docs/PostUpsamplingFileRequest.md)
+ - [ProblemDetails](docs/ProblemDetails.md)
+ - [ResponseStatusCode](docs/ResponseStatusCode.md)
+ - [ResultType](docs/ResultType.md)
+ - [ResultTypeTTS](docs/ResultTypeTTS.md)
+ - [ResultTypeTable](docs/ResultTypeTable.md)
+ - [TTSBody](docs/TTSBody.md)
+ - [TTSBodyDeprecated](docs/TTSBodyDeprecated.md)
+ - [TTSError](docs/TTSError.md)
+ - [TTSResponse](docs/TTSResponse.md)
+ - [TTSResult](docs/TTSResult.md)
+ - [TTSSettings](docs/TTSSettings.md)
+ - [TTSTaskStatus](docs/TTSTaskStatus.md)
 
-This project includes:   
-- Android demo application - "/example"
-- Java SDK sources located in root of repository. You can integrate build it from sources with your target JDK and itegrate it in your application.
+
+## Documentation for Authorization
+
+Authentication schemes defined for the API:
+### JWT
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: N/A
+
+
+## Recommendation
+
+It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
+
+## Author
 
 
 
-### Dependencies
-[See build.gradle](./build.gradle) or [pom.xml](./pom.xml)
-_________________________
-
-## Aspose.OCR Cloud SDKs in Popular Languages
-
-| .NET                                                                  | Java                                                                                                             | Python                                                                | Android                                                                                                          | NodeJS                                                                |
-|-----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| [GitHub](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-dotnet) | [GitHub](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-java)                                              | [GitHub](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-python) | [GitHub](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-android)                                           | [GitHub](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-nodejs) |
-| [NuGet](https://www.nuget.org/packages/Aspose.ocr-Cloud/)             | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-ocr-cloud) | [PIP](https://pypi.org/project/aspose-ocr-cloud/)                     | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-ocr-cloud) | [NPM](https://www.npmjs.com/package/@asposecloud/aspose-ocr-cloud)    |
-
-[Product Page](https://products.aspose.cloud/ocr/) | [Documentation](https://docs.aspose.cloud/display/ocrcloud/Home) | [API Reference](https://apireference.aspose.cloud/ocr/) | [Code Samples](https://github.com/aspose-ocr-cloud/aspose-ocr-cloud-nodejs) | [Blog](https://blog.aspose.cloud/category/ocr/) | [Free Support](https://forum.aspose.cloud/c/ocr) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
